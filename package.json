@@ -1,0 +1,19 @@
+{
+  "name": "vc-runtime-lab",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "turbo dev --filter vc-runtime-lab-host --filter vc-runtime-lab-app-remote",
+    "build": "turbo build --filter vc-runtime-lab-host --filter vc-runtime-lab-app-remote",
+    "typecheck": "turbo typecheck --filter vc-runtime-lab-host --filter vc-runtime-lab-app-remote"
+  },
+  "packageManager": "pnpm@9.15.9",
+  "engines": {
+    "node": "20.x",
+    "pnpm": "9.15.9"
+  },
+  "devDependencies": {
+    "turbo": "2.5.2-canary.0"
+  }
+}

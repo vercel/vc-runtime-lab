@@ -1,0 +1,20 @@
+{
+  "$schema": "https://openapi.vercel.sh/microfrontends.json",
+  "applications": {
+    "vc-runtime-lab-host": {
+      "development": {
+        "fallback": "vc-runtime-lab-host.vercel.app"
+      }
+    },
+    "vc-runtime-lab-app-remote": {
+      "routing": [
+        {
+          "paths": ["/app-fragments", "/app-fragments/:path*"]
+        }
+      ]
+    }
+  },
+  "options": {
+    "localProxyPort": 3024
+  }
+}

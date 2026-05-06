@@ -1,0 +1,16 @@
+{
+  "rewrites": [
+    {
+      "source": "/dashboard",
+      "destination": "/"
+    },
+    {
+      "source": "/reports",
+      "destination": "/"
+    },
+    {
+      "source": "/settings",
+      "destination": "/"
+    }
+  ]
+}

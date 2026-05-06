@@ -1,0 +1,25 @@
+{
+  "name": "vc-runtime-lab-host",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "vite build",
+    "dev": "vite --host 0.0.0.0 --port $(microfrontends port)",
+    "preview": "vite preview --host 0.0.0.0 --port $(microfrontends port)",
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "@vercel/microfrontends": "2.2.0",
+    "react": "^19.2.3",
+    "react-dom": "^19.2.3",
+    "remote-components": "0.4.2"
+  },
+  "devDependencies": {
+    "@types/react": "^19.2.3",
+    "@types/react-dom": "^19.2.3",
+    "@vitejs/plugin-react": "^4.3.4",
+    "typescript": "5.7.3",
+    "vite": "^7.2.4"
+  }
+}
