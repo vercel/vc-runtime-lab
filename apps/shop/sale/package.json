@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "dev": "next dev --port 3008",
-    "build": "next build",
+    "build": "TURBOPACK=1 next build",
     "start": "next start --port 3008",
     "lint": "next lint",
     "type-check": "tsc --noEmit"
@@ -16,7 +16,7 @@
     "next": "16.2.4",
     "react": "^19.2.0",
     "react-dom": "^19.2.0",
-    "remote-components": "0.4.2"
+    "remote-components": "0.4.3"
   },
   "devDependencies": {
     "@shop/tsconfig": "workspace:*",

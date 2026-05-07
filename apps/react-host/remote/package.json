@@ -14,7 +14,7 @@
     "next": "^16.1.3",
     "react": "^19.2.3",
     "react-dom": "^19.2.3",
-    "remote-components": "0.4.2"
+    "remote-components": "0.4.3"
   },
   "devDependencies": {
     "@types/node": "20.11.30",
