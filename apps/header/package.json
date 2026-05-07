@@ -1,0 +1,28 @@
+{
+  "name": "@shop/header",
+  "version": "0.0.1",
+  "private": true,
+  "scripts": {
+    "dev": "next dev --port 3001",
+    "build": "next build",
+    "start": "next start --port 3001",
+    "lint": "next lint",
+    "type-check": "tsc --noEmit"
+  },
+  "dependencies": {
+    "@shop/api-client": "workspace:*",
+    "@shop/ui": "workspace:*",
+    "@vercel/microfrontends": "^2.3.2",
+    "next": "16.2.4",
+    "react": "^19.2.0",
+    "react-dom": "^19.2.0",
+    "remote-components": "^0.3.7"
+  },
+  "devDependencies": {
+    "@shop/tsconfig": "workspace:*",
+    "@types/node": "^22.0.0",
+    "@types/react": "^19.0.7",
+    "@types/react-dom": "^19.0.7",
+    "typescript": "^5.7.2"
+  }
+}

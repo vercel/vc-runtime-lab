@@ -1,0 +1,50 @@
+{
+  "$schema": "https://openapi.vercel.sh/microfrontends.json",
+  "applications": {
+    "shop-shell": {
+      "packageName": "@shop/shell",
+      "development": {
+        "local": 3000,
+        "fallback": "https://shop-shell.vercel.app"
+      }
+    },
+    "shop-header": {
+      "packageName": "@shop/header",
+      "routing": [{ "paths": ["/components/header"] }],
+      "development": { "local": 3001 }
+    },
+    "shop-footer": {
+      "packageName": "@shop/footer",
+      "routing": [{ "paths": ["/components/footer"] }],
+      "development": { "local": 3002 }
+    },
+    "shop-home": {
+      "packageName": "@shop/home",
+      "routing": [{ "paths": ["/"] }],
+      "development": { "local": 3003 }
+    },
+    "shop-beds": {
+      "packageName": "@shop/beds",
+      "routing": [{ "paths": ["/beds", "/beds/:subcategory", "/mattresses", "/mattresses/:subcategory"] }],
+      "development": { "local": 3004 }
+    },
+    "shop-pdp": {
+      "packageName": "@shop/pdp",
+      "routing": [{ "paths": ["/product/:id"] }],
+      "development": { "local": 3005 }
+    },
+    "shop-checkout": {
+      "packageName": "@shop/checkout",
+      "routing": [{ "paths": ["/checkout"] }],
+      "development": { "local": 3006 }
+    },
+    "shop-sale": {
+      "packageName": "@shop/sale",
+      "routing": [{ "paths": ["/sale", "/sale/:category"] }],
+      "development": { "local": 3008 }
+    }
+  },
+  "options": {
+    "localProxyPort": 3025
+  }
+}
