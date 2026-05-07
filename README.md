@@ -61,7 +61,6 @@ vc-runtime-lab/
 │           ├── ui/            # Button, Input, Typography + Tailwind base
 │           ├── api-client/    # shared fetch helpers + types
 │           └── tsconfig/      # shared TS configs
-└── scripts/           # shop demo — Vercel Blob asset upload helper
 ```
 
 ## Type-check
