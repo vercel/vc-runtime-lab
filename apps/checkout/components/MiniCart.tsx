@@ -1,17 +1,15 @@
 'use client'
 
 import { useState, useEffect } from 'react'
-import type { CartItem } from '@shop/api-client'
+import { getCartItems, type CartItem } from '@shop/api-client'
 
 export default function MiniCart() {
   const [items, setItems] = useState<CartItem[]>([])
   const [loading, setLoading] = useState(true)
 
   useEffect(() => {
-    fetch('/api/cart')
-      .then((r) => r.json())
-      .then((data: CartItem[]) => setItems(data))
-      .catch(() => {})
+    getCartItems()
+      .then((data) => setItems(data))
       .finally(() => setLoading(false))
   }, [])
 

@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from 'react'
 import { Link } from '@vercel/microfrontends/next/client'
-import type { Product } from '@shop/api-client'
+import { addToCart, type Product } from '@shop/api-client'
 
 interface Props {
   productId?: string
@@ -23,6 +23,8 @@ export default function PDPPage({ productId = 'p-1' }: Props) {
   }, [productId])
 
   const handleAddToCart = () => {
+    if (!product) return
+    addToCart(product)
     setAdded(true)
     setTimeout(() => setAdded(false), 2000)
   }

@@ -1,7 +1,7 @@
 'use client'
 
 import { useState, useEffect } from 'react'
-import type { CartItem } from '@shop/api-client'
+import { getCartItems, setCartItems, type CartItem } from '@shop/api-client'
 
 const FREE_DELIVERY_THRESHOLD = 75
 
@@ -12,13 +12,11 @@ export default function CheckoutPage() {
   const [orderPlaced, setOrderPlaced] = useState(false)
 
   useEffect(() => {
-    fetch('/api/cart')
-      .then((r) => r.json())
-      .then((data: CartItem[]) => {
+    getCartItems()
+      .then((data) => {
         setItems(data)
         setQuantities(Object.fromEntries(data.map((i) => [i.id, i.quantity])))
       })
-      .catch(() => {})
       .finally(() => setLoading(false))
   }, [])
 
@@ -30,6 +28,9 @@ export default function CheckoutPage() {
   const orderNumber = `SH-${Math.floor(Math.random() * 900000) + 100000}`
 
   if (orderPlaced) {
+    if (typeof window !== 'undefined') {
+      try { window.localStorage.removeItem('shop:cart') } catch {}
+    }
     return (
       <div className="w-full max-w-[640px] mx-auto px-6 lg:px-10 py-20 text-center">
         <div className="w-14 h-14 mx-auto mb-6 rounded-full bg-green-100 flex items-center justify-center">
@@ -124,9 +125,11 @@ export default function CheckoutPage() {
                         <button
                           className="text-neutral-400 hover:text-black transition-colors flex-shrink-0"
                           aria-label={`Remove ${item.name}`}
-                          onClick={() =>
-                            setItems((prev) => prev.filter((i) => i.id !== item.id))
-                          }
+                          onClick={() => {
+                            const next = items.filter((i) => i.id !== item.id)
+                            setItems(next)
+                            setCartItems(next)
+                          }}
                         >
                           <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
                             <line x1="18" y1="6" x2="6" y2="18" />
