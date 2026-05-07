@@ -9,6 +9,7 @@ export default function CheckoutPage() {
   const [items, setItems] = useState<CartItem[]>([])
   const [loading, setLoading] = useState(true)
   const [quantities, setQuantities] = useState<Record<string, number>>({})
+  const [orderPlaced, setOrderPlaced] = useState(false)
 
   useEffect(() => {
     fetch('/api/cart')
@@ -26,6 +27,32 @@ export default function CheckoutPage() {
   const total = subtotal + shipping
   const progressPct = Math.min((subtotal / FREE_DELIVERY_THRESHOLD) * 100, 100)
   const remaining = FREE_DELIVERY_THRESHOLD - subtotal
+  const orderNumber = `SH-${Math.floor(Math.random() * 900000) + 100000}`
+
+  if (orderPlaced) {
+    return (
+      <div className="w-full max-w-[640px] mx-auto px-6 lg:px-10 py-20 text-center">
+        <div className="w-14 h-14 mx-auto mb-6 rounded-full bg-green-100 flex items-center justify-center">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#16a34a" strokeWidth="2.2">
+            <polyline points="20 6 9 17 4 12" />
+          </svg>
+        </div>
+        <h1 className="text-2xl font-light tracking-tight mb-3">Order placed</h1>
+        <p className="text-sm text-neutral-600 mb-1">
+          Thanks for your order. A confirmation has been sent to your email.
+        </p>
+        <p className="text-xs text-neutral-400 mb-8">
+          Order reference <span className="font-mono">{orderNumber}</span> · £{total.toFixed(2)}
+        </p>
+        <a
+          href="/"
+          className="inline-block bg-black text-white text-xs font-medium tracking-widest uppercase px-7 py-3.5 hover:bg-neutral-800 transition-colors"
+        >
+          Continue Shopping
+        </a>
+      </div>
+    )
+  }
 
   return (
     <div className="w-full max-w-[1280px] mx-auto px-6 lg:px-10 py-8">
@@ -178,7 +205,11 @@ export default function CheckoutPage() {
               <p className="text-[10px] text-neutral-400 mt-0.5">Tax Included</p>
             </div>
 
-            <button className="w-full bg-black text-white text-xs font-medium tracking-widest uppercase py-4 hover:bg-neutral-800 transition-colors">
+            <button
+              onClick={() => setOrderPlaced(true)}
+              disabled={items.length === 0}
+              className="w-full bg-black text-white text-xs font-medium tracking-widest uppercase py-4 hover:bg-neutral-800 transition-colors disabled:bg-neutral-300 disabled:cursor-not-allowed"
+            >
               Checkout
             </button>
 

@@ -8,17 +8,9 @@ interface Props {
   productId?: string
 }
 
-const FINISH_OPTIONS: { label: string; swatch: string }[] = [
-  { label: 'Solid Oak', swatch: '#c2a986' },
-  { label: 'American Walnut', swatch: '#6b4a30' },
-  { label: 'Whitewashed Pine', swatch: '#e8dec7' },
-  { label: 'Charcoal Stained', swatch: '#3a3530' },
-]
-
 export default function PDPPage({ productId = 'p-1' }: Props) {
   const [product, setProduct] = useState<Product | null>(null)
   const [loading, setLoading] = useState(true)
-  const [selectedFinish, setSelectedFinish] = useState(0)
   const [added, setAdded] = useState(false)
 
   useEffect(() => {
@@ -133,47 +125,12 @@ export default function PDPPage({ productId = 'p-1' }: Props) {
 
             <p className="text-xl font-medium mt-4">£{product.price}</p>
 
-            <div className="mt-5">
-              <p className="text-xs tracking-wider uppercase text-neutral-500 mb-2">Finish</p>
-              <div className="flex flex-wrap gap-2">
-                {FINISH_OPTIONS.map((finish, i) => (
-                  <button
-                    key={finish.label}
-                    onClick={() => setSelectedFinish(i)}
-                    className={`
-                      w-8 h-8 rounded-full border-2 transition-all
-                      ${selectedFinish === i ? 'border-black scale-110' : 'border-neutral-300 hover:border-neutral-500'}
-                    `}
-                    style={{ background: finish.swatch }}
-                    aria-label={finish.label}
-                    title={finish.label}
-                  />
-                ))}
-              </div>
-              <p className="text-xs text-neutral-600 mt-1.5">{FINISH_OPTIONS[selectedFinish]?.label}</p>
-            </div>
-
             <div className="mt-5 pb-5 border-b border-neutral-100">
               <p className="text-sm text-neutral-700 leading-relaxed">{product.description}</p>
               <button className="text-xs underline underline-offset-2 mt-2 text-neutral-500 hover:text-black">
                 View specifications
               </button>
             </div>
-
-            <button className="flex items-center justify-between w-full py-4 border-b border-neutral-100 text-sm group">
-              <span className="tracking-wide">Choose Your Size</span>
-              <svg
-                width="16"
-                height="16"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                strokeWidth="1.5"
-                className="group-hover:translate-x-0.5 transition-transform"
-              >
-                <polyline points="9 18 15 12 9 6" />
-              </svg>
-            </button>
 
             <button
               onClick={handleAddToCart}
