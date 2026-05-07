@@ -1,15 +1,18 @@
 import { Link } from '@vercel/microfrontends/next/client'
+import Image from 'next/image'
 
 export default function HomePage() {
   return (
     <div className="w-full">
       {/* Hero */}
       <section className="relative w-full h-[85vh] min-h-[520px] overflow-hidden bg-neutral-200">
-        {/* eslint-disable-next-line @next/next/no-img-element */}
-        <img
+        <Image
           src="/products/hero-bedroom.jpg"
           alt="Serene minimalist bedroom interior"
-          className="absolute inset-0 w-full h-full object-cover"
+          fill
+          priority
+          sizes="100vw"
+          className="object-cover"
         />
         <div className="absolute inset-0 bg-gradient-to-t from-black/45 via-transparent to-transparent" />
 
@@ -60,11 +63,12 @@ export default function HomePage() {
 
       {/* Editorial banner */}
       <section className="relative w-full aspect-[16/7] overflow-hidden mb-1 bg-neutral-200">
-        {/* eslint-disable-next-line @next/next/no-img-element */}
-        <img
+        <Image
           src="/products/hero-mattress.jpg"
           alt="Crisp linen bedding on a luxurious mattress"
-          className="absolute inset-0 w-full h-full object-cover"
+          fill
+          sizes="100vw"
+          className="object-cover"
         />
         <div className="absolute inset-0 bg-gradient-to-r from-black/40 to-transparent" />
         <div className="absolute inset-0 flex flex-col justify-end p-10 md:p-16 max-w-[480px]">

@@ -2,6 +2,7 @@
 
 import { useState, useEffect, useMemo } from 'react'
 import { Link } from '@vercel/microfrontends/next/client'
+import Image from 'next/image'
 import type { Product } from '@shop/api-client'
 
 interface Props {
@@ -132,12 +133,12 @@ export default function SalePage({ category }: Props) {
             {products.map((p) => (
               <Link key={p.id} href={`/product/${p.id}`} className="group block">
                 <div className="relative aspect-square mb-3 overflow-hidden bg-neutral-50">
-                  {/* eslint-disable-next-line @next/next/no-img-element */}
-                  <img
+                  <Image
                     src={p.image}
                     alt={p.name}
-                    loading="lazy"
-                    className="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-[1.02]"
+                    fill
+                    sizes="(max-width: 768px) 50vw, 33vw"
+                    className="object-cover transition-transform duration-500 group-hover:scale-[1.02]"
                   />
                   {p.isBestseller && (
                     <span className="absolute top-2 left-2 bg-white text-[9px] tracking-widest uppercase font-medium px-2 py-1 z-10">

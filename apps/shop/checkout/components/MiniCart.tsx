@@ -1,6 +1,7 @@
 'use client'
 
 import { useState, useEffect } from 'react'
+import Image from 'next/image'
 import { getCartItems, type CartItem } from '@shop/api-client'
 
 export default function MiniCart() {
@@ -47,11 +48,11 @@ export default function MiniCart() {
           <ul className="divide-y divide-neutral-100">
             {items.map((item) => (
               <li key={item.id} className="flex gap-3 px-5 py-4">
-                {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img
+                <Image
                   src={item.image}
                   alt={item.name}
-                  loading="lazy"
+                  width={72}
+                  height={72}
                   className="w-[72px] h-[72px] object-cover flex-shrink-0 bg-neutral-50"
                 />
                 <div className="flex-1 min-w-0">

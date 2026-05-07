@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from 'react'
 import { Link } from '@vercel/microfrontends/next/client'
+import Image from 'next/image'
 import { addToCart, type Product } from '@shop/api-client'
 
 interface Props {
@@ -98,12 +99,12 @@ export default function PDPPage({ productId = 'p-1' }: Props) {
                   className="relative aspect-square overflow-hidden border-2 border-transparent hover:border-neutral-300 transition-colors bg-neutral-50"
                   aria-label={`View angle ${i + 1}`}
                 >
-                  {/* eslint-disable-next-line @next/next/no-img-element */}
-                  <img
+                  <Image
                     src={product.image}
                     alt=""
-                    loading="lazy"
-                    className="absolute inset-0 w-full h-full object-cover"
+                    fill
+                    sizes="72px"
+                    className="object-cover"
                     style={{ opacity: 1 - i * 0.18 }}
                   />
                 </button>
@@ -111,11 +112,13 @@ export default function PDPPage({ productId = 'p-1' }: Props) {
             </div>
 
             <div className="flex-1 relative aspect-square overflow-hidden bg-neutral-50">
-              {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img
+              <Image
                 src={product.image}
                 alt={product.name}
-                className="absolute inset-0 w-full h-full object-cover"
+                fill
+                priority
+                sizes="(max-width: 1024px) 100vw, 668px"
+                className="object-cover"
               />
             </div>
           </div>

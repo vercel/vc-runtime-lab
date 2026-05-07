@@ -1,6 +1,7 @@
 'use client'
 
 import { useState, useEffect } from 'react'
+import Image from 'next/image'
 import { getCartItems, setCartItems, type CartItem } from '@shop/api-client'
 
 const FREE_DELIVERY_THRESHOLD = 75
@@ -108,11 +109,11 @@ export default function CheckoutPage() {
                 const qty = quantities[item.id] ?? item.quantity
                 return (
                   <li key={item.id} className="flex gap-5 py-6">
-                    {/* eslint-disable-next-line @next/next/no-img-element */}
-                    <img
+                    <Image
                       src={item.image}
                       alt={item.name}
-                      loading="lazy"
+                      width={120}
+                      height={120}
                       className="w-[120px] h-[120px] object-cover flex-shrink-0 bg-neutral-50"
                     />
                     <div className="flex-1 min-w-0">

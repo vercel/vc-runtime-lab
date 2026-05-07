@@ -1,4 +1,5 @@
 import { Link } from '@vercel/microfrontends/next/client'
+import Image from 'next/image'
 import type { Product } from '@shop/api-client'
 
 interface Props {
@@ -9,12 +10,12 @@ export default function ProductCard({ product }: Props) {
   return (
     <Link href={`/product/${product.id}`} className="group block">
       <div className="relative aspect-square overflow-hidden mb-3 bg-neutral-50">
-        {/* eslint-disable-next-line @next/next/no-img-element */}
-        <img
+        <Image
           src={product.image}
           alt={product.name}
-          loading="lazy"
-          className="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-[1.02]"
+          fill
+          sizes="(max-width: 768px) 50vw, 33vw"
+          className="object-cover transition-transform duration-500 group-hover:scale-[1.02]"
         />
         {product.isNew && (
           <span className="absolute top-2 left-2 bg-black text-white text-[9px] tracking-widest uppercase px-2 py-0.5">
