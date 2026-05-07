@@ -131,10 +131,14 @@ export default function SalePage({ category }: Props) {
           <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-x-4 gap-y-8 pt-8">
             {products.map((p) => (
               <Link key={p.id} href={`/product/${p.id}`} className="group">
-                <div
-                  className="relative aspect-square mb-3 overflow-hidden transition-transform duration-500 group-hover:scale-[1.02]"
-                  style={{ background: p.gradient }}
-                >
+                <div className="relative aspect-square mb-3 overflow-hidden bg-neutral-50">
+                  {/* eslint-disable-next-line @next/next/no-img-element */}
+                  <img
+                    src={p.image}
+                    alt={p.name}
+                    loading="lazy"
+                    className="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-[1.02]"
+                  />
                   {p.isBestseller && (
                     <span className="absolute top-2 left-2 bg-white text-[9px] tracking-widest uppercase font-medium px-2 py-1 z-10">
                       Bestseller

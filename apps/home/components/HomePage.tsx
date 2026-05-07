@@ -4,10 +4,13 @@ export default function HomePage() {
   return (
     <div className="w-full">
       {/* Hero */}
-      <section
-        className="relative w-full h-[85vh] min-h-[520px] overflow-hidden"
-        style={{ background: 'linear-gradient(135deg, #d6c8b3 0%, #6f5b42 100%)' }}
-      >
+      <section className="relative w-full h-[85vh] min-h-[520px] overflow-hidden bg-neutral-200">
+        {/* eslint-disable-next-line @next/next/no-img-element */}
+        <img
+          src="/products/hero-bedroom.jpg"
+          alt="Serene minimalist bedroom interior"
+          className="absolute inset-0 w-full h-full object-cover"
+        />
         <div className="absolute inset-0 bg-gradient-to-t from-black/45 via-transparent to-transparent" />
 
         <div className="absolute bottom-0 left-0 p-8 md:p-14 max-w-[520px]">
@@ -56,10 +59,13 @@ export default function HomePage() {
       </section>
 
       {/* Editorial banner */}
-      <section
-        className="relative w-full aspect-[16/7] overflow-hidden mb-1"
-        style={{ background: 'linear-gradient(120deg, #c8b9a3 0%, #8a7659 60%, #5a4733 100%)' }}
-      >
+      <section className="relative w-full aspect-[16/7] overflow-hidden mb-1 bg-neutral-200">
+        {/* eslint-disable-next-line @next/next/no-img-element */}
+        <img
+          src="/products/hero-mattress.jpg"
+          alt="Crisp linen bedding on a luxurious mattress"
+          className="absolute inset-0 w-full h-full object-cover"
+        />
         <div className="absolute inset-0 bg-gradient-to-r from-black/40 to-transparent" />
         <div className="absolute inset-0 flex flex-col justify-end p-10 md:p-16 max-w-[480px]">
           <p className="text-white/70 text-[11px] tracking-widest uppercase mb-2">100-night trial</p>

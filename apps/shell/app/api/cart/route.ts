@@ -8,7 +8,7 @@ const MOCK_CART: CartItem[] = [
     name: 'Oakwood Platform Bed Frame',
     price: 749,
     quantity: 1,
-    gradient: 'linear-gradient(135deg, #c2a986 0%, #8b6f4d 100%)',
+    image: '/products/p-1-oak-platform-bed.jpg',
     material: 'Solid Oak',
   },
   {
@@ -17,7 +17,7 @@ const MOCK_CART: CartItem[] = [
     name: 'Cloudfoam Hybrid Mattress',
     price: 899,
     quantity: 1,
-    gradient: 'linear-gradient(135deg, #f5f1ea 0%, #d4cdb9 100%)',
+    image: '/products/p-4-hybrid-mattress.jpg',
     material: 'Pocket Spring + Memory Foam',
   },
   {
@@ -26,7 +26,7 @@ const MOCK_CART: CartItem[] = [
     name: 'Stonewashed Linen Duvet Set',
     price: 189,
     quantity: 2,
-    gradient: 'linear-gradient(135deg, #e2dccb 0%, #a99e85 100%)',
+    image: '/products/p-9-linen-duvet-set.jpg',
     material: 'Belgian Linen',
   },
 ]

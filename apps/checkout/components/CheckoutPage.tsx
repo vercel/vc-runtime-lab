@@ -80,9 +80,12 @@ export default function CheckoutPage() {
                 const qty = quantities[item.id] ?? item.quantity
                 return (
                   <li key={item.id} className="flex gap-5 py-6">
-                    <div
-                      className="w-[120px] h-[120px] flex-shrink-0"
-                      style={{ background: item.gradient }}
+                    {/* eslint-disable-next-line @next/next/no-img-element */}
+                    <img
+                      src={item.image}
+                      alt={item.name}
+                      loading="lazy"
+                      className="w-[120px] h-[120px] object-cover flex-shrink-0 bg-neutral-50"
                     />
                     <div className="flex-1 min-w-0">
                       <div className="flex justify-between items-start gap-2">
@@ -212,7 +215,7 @@ export default function CheckoutPage() {
               </div>
               <div className="flex items-center gap-2 text-xs text-neutral-500">
                 <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#B5975A" strokeWidth="1.5"><polyline points="20 6 9 17 4 12"/></svg>
-                Free 100-day mattress trial
+                Free 100-night mattress trial
               </div>
             </div>
           </div>

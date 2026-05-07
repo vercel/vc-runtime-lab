@@ -6,7 +6,7 @@ export interface Product {
   category: string
   subcategory?: string
   material: string
-  gradient: string
+  image: string
   description: string
   rating?: number
   reviewCount?: number
@@ -20,7 +20,7 @@ export interface CartItem {
   name: string
   price: number
   quantity: number
-  gradient: string
+  image: string
   material: string
 }
 

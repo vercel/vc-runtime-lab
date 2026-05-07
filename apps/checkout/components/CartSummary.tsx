@@ -1,3 +1,4 @@
+import { headers } from 'next/headers'
 import type { CartItem } from '@shop/api-client'
 
 interface Props {
@@ -5,11 +6,14 @@ interface Props {
   showCheckoutButton?: boolean
 }
 
-const SHELL_URL = process.env.NEXT_PUBLIC_SHELL_URL ?? 'http://localhost:3000'
-
 async function getCart(): Promise<CartItem[]> {
+  // Resolve the absolute URL from the current request's host so the fetch
+  // hits the microfrontends proxy/edge, which routes /api/* to shop-shell.
+  const h = await headers()
+  const host = h.get('host')
+  const proto = h.get('x-forwarded-proto') ?? (host?.startsWith('localhost') ? 'http' : 'https')
   try {
-    const res = await fetch(`${SHELL_URL}/api/cart`, { cache: 'no-store' })
+    const res = await fetch(`${proto}://${host}/api/cart`, { cache: 'no-store' })
     if (!res.ok) return []
     return res.json()
   } catch {

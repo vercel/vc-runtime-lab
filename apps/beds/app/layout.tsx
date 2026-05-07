@@ -12,10 +12,9 @@ import { HeaderSkeleton, FooterSkeleton } from '@/components/Skeletons'
 
 const geist = Geist({ subsets: ['latin'] })
 
-export const metadata: Metadata = { title: 'Beds MFE — Shop' }
+export const dynamic = 'force-dynamic'
 
-const HEADER_URL = process.env.HEADER_URL ?? 'http://localhost:3001'
-const FOOTER_URL = process.env.FOOTER_URL ?? 'http://localhost:3002'
+export const metadata: Metadata = { title: 'Beds MFE — Shop' }
 
 export default function Layout({ children }: { children: React.ReactNode }) {
   return (
@@ -24,11 +23,11 @@ export default function Layout({ children }: { children: React.ReactNode }) {
         <PrefetchCrossZoneLinksProvider>
           <Providers>
             <Suspense fallback={<HeaderSkeleton />}>
-              <ConsumeRemoteComponent isolate={false} src={`${HEADER_URL}/components/header`} />
+              <ConsumeRemoteComponent isolate={false} src="/components/header" />
             </Suspense>
             <main className="flex-1">{children}</main>
             <Suspense fallback={<FooterSkeleton />}>
-              <ConsumeRemoteComponent isolate={false} src={`${FOOTER_URL}/components/footer`} />
+              <ConsumeRemoteComponent isolate={false} src="/components/footer" />
             </Suspense>
           </Providers>
         </PrefetchCrossZoneLinksProvider>

@@ -49,9 +49,12 @@ export default function MiniCart() {
           <ul className="divide-y divide-neutral-100">
             {items.map((item) => (
               <li key={item.id} className="flex gap-3 px-5 py-4">
-                <div
-                  className="w-[72px] h-[72px] flex-shrink-0"
-                  style={{ background: item.gradient }}
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img
+                  src={item.image}
+                  alt={item.name}
+                  loading="lazy"
+                  className="w-[72px] h-[72px] object-cover flex-shrink-0 bg-neutral-50"
                 />
                 <div className="flex-1 min-w-0">
                   <p className="text-xs font-medium leading-snug line-clamp-2">{item.name}</p>

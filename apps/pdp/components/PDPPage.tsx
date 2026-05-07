@@ -81,17 +81,29 @@ export default function PDPPage({ productId = 'p-1' }: Props) {
               {[0, 1, 2, 3].map((i) => (
                 <button
                   key={i}
-                  className="relative aspect-square overflow-hidden border-2 border-transparent hover:border-neutral-300 transition-colors"
-                  style={{ background: product.gradient, opacity: 1 - i * 0.18 }}
+                  className="relative aspect-square overflow-hidden border-2 border-transparent hover:border-neutral-300 transition-colors bg-neutral-50"
                   aria-label={`View angle ${i + 1}`}
-                />
+                >
+                  {/* eslint-disable-next-line @next/next/no-img-element */}
+                  <img
+                    src={product.image}
+                    alt=""
+                    loading="lazy"
+                    className="absolute inset-0 w-full h-full object-cover"
+                    style={{ opacity: 1 - i * 0.18 }}
+                  />
+                </button>
               ))}
             </div>
 
-            <div
-              className="flex-1 relative aspect-square overflow-hidden"
-              style={{ background: product.gradient }}
-            />
+            <div className="flex-1 relative aspect-square overflow-hidden bg-neutral-50">
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img
+                src={product.image}
+                alt={product.name}
+                className="absolute inset-0 w-full h-full object-cover"
+              />
+            </div>
           </div>
 
           <div className="flex flex-col">
@@ -138,7 +150,7 @@ export default function PDPPage({ productId = 'p-1' }: Props) {
                   />
                 ))}
               </div>
-              <p className="text-xs text-neutral-600 mt-1.5">{FINISH_OPTIONS[selectedFinish].label}</p>
+              <p className="text-xs text-neutral-600 mt-1.5">{FINISH_OPTIONS[selectedFinish]?.label}</p>
             </div>
 
             <div className="mt-5 pb-5 border-b border-neutral-100">
