@@ -56,12 +56,11 @@ vc-runtime-lab/
 │       ├── beds/      # shop demo — owns /beds, /mattresses
 │       ├── pdp/       # shop demo — owns /product/:id
 │       ├── checkout/  # shop demo — owns /checkout
-│       └── sale/      # shop demo — owns /sale
-├── packages/
-│   ├── ui/            # shop demo — Button, Input, Typography + Tailwind base
-│   ├── api-client/    # shop demo — shared fetch helpers + types
-│   └── tsconfig/      # shared TS configs
-├── design-reference/  # shop demo — design mockup PNGs
+│       ├── sale/      # shop demo — owns /sale
+│       └── packages/
+│           ├── ui/            # Button, Input, Typography + Tailwind base
+│           ├── api-client/    # shared fetch helpers + types
+│           └── tsconfig/      # shared TS configs
 └── scripts/           # shop demo — Vercel Blob asset upload helper
 ```
 
