@@ -6,7 +6,7 @@
 //   2. Run from repo root:
 //        BLOB_READ_WRITE_TOKEN=xxx node scripts/upload-blob-images.mjs
 //   3. Take the printed manifest and use it to patch
-//      apps/shell/app/api/products/route.ts.
+//      apps/shop/shell/app/api/products/route.ts.
 
 import { put } from '@vercel/blob'
 import { readFile, readdir, writeFile } from 'node:fs/promises'

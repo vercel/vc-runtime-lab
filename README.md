@@ -5,7 +5,7 @@ Two demos exploring runtime composition with [Vercel Microfrontends](https://ver
 ## Demos
 
 ### `lab` — Vite host + 1 Next remote
-Vite React host (`apps/host`) and a Next.js Remote Components remote (`apps/remote`). Covers remote navigation, shared React context, and open vs closed Shadow DOM. Local proxy: **3024**. Deployed at https://vc-runtime-lab-host.vercel.app/.
+Vite React host (`apps/react-host/host`) and a Next.js Remote Components remote (`apps/react-host/remote`). Covers remote navigation, shared React context, and open vs closed Shadow DOM. Local proxy: **3024**. Deployed at https://vc-runtime-lab-host.vercel.app/.
 
 ### `shop` — Multi-app microfrontend storefront
 A bedroom-furniture storefront built with Next.js 16 native microfrontends + `remote-components`. Product imagery is rendered as CSS gradients (no external image hosts). Demonstrates two composition patterns side-by-side:
@@ -45,16 +45,18 @@ pnpm dev:lab    # Vite host + remote, proxy at http://localhost:3024
 ```
 vc-runtime-lab/
 ├── apps/
-│   ├── host/          # lab demo — Vite host
-│   ├── remote/        # lab demo — Next remote
-│   ├── shell/         # shop demo — default app, /api/*, microfrontends.json
-│   ├── header/        # shop demo — horizontal remote
-│   ├── footer/        # shop demo — horizontal remote
-│   ├── home/          # shop demo — owns /
-│   ├── beds/          # shop demo — owns /beds, /mattresses
-│   ├── pdp/           # shop demo — owns /product/:id
-│   ├── checkout/      # shop demo — owns /checkout
-│   └── sale/          # shop demo — owns /sale
+│   ├── react-host/
+│   │   ├── host/      # lab demo — Vite host
+│   │   └── remote/    # lab demo — Next remote
+│   └── shop/
+│       ├── shell/     # shop demo — default app, /api/*, microfrontends.json
+│       ├── header/    # shop demo — horizontal remote
+│       ├── footer/    # shop demo — horizontal remote
+│       ├── home/      # shop demo — owns /
+│       ├── beds/      # shop demo — owns /beds, /mattresses
+│       ├── pdp/       # shop demo — owns /product/:id
+│       ├── checkout/  # shop demo — owns /checkout
+│       └── sale/      # shop demo — owns /sale
 ├── packages/
 │   ├── ui/            # shop demo — Button, Input, Typography + Tailwind base
 │   ├── api-client/    # shop demo — shared fetch helpers + types

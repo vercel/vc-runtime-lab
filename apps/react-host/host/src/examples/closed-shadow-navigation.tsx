@@ -5,8 +5,8 @@ import { RemotePanel } from '../components/remote-panel';
 import { codeLinks } from './code-links';
 
 const codeUrls = codeLinks(
-  'apps/host/src/examples/closed-shadow-navigation.tsx',
-  'apps/remote/app/app-fragments/navigation/navigation-panel.tsx',
+  'apps/react-host/host/src/examples/closed-shadow-navigation.tsx',
+  'apps/react-host/remote/app/app-fragments/navigation/navigation-panel.tsx',
 );
 
 export function ClosedShadowNavigation({ src }: { src: string }) {

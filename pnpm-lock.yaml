@@ -30,204 +30,7 @@ importers:
         specifier: ^5.9.3
         version: 5.9.3
 
-  apps/beds:
-    dependencies:
-      '@shop/api-client':
-        specifier: workspace:*
-        version: link:../../packages/api-client
-      '@shop/ui':
-        specifier: workspace:*
-        version: link:../../packages/ui
-      '@vercel/microfrontends':
-        specifier: ^2.3.2
-        version: 2.3.2(next@16.2.4(react-dom@19.2.6(react@19.2.6))(react@19.2.6))(react-dom@19.2.6(react@19.2.6))(react@19.2.6)(vite@7.3.3(@types/node@22.19.17)(jiti@2.7.0)(lightningcss@1.32.0)(terser@5.47.1))
-      next:
-        specifier: 16.2.4
-        version: 16.2.4(@babel/core@7.29.0)(react-dom@19.2.6(react@19.2.6))(react@19.2.6)
-      react:
-        specifier: ^19.2.0
-        version: 19.2.6
-      react-dom:
-        specifier: ^19.2.0
-        version: 19.2.6(react@19.2.6)
-      remote-components:
-        specifier: 0.4.2
-        version: 0.4.2(next@16.2.4(@babel/core@7.29.0)(react-dom@19.2.6(react@19.2.6))(react@19.2.6))(react-dom@19.2.6(react@19.2.6))(react@19.2.6)
-    devDependencies:
-      '@shop/tsconfig':
-        specifier: workspace:*
-        version: link:../../packages/tsconfig
-      '@types/node':
-        specifier: ^22.0.0
-        version: 22.19.17
-      '@types/react':
-        specifier: ^19.0.7
-        version: 19.2.14
-      '@types/react-dom':
-        specifier: ^19.0.7
-        version: 19.2.3(@types/react@19.2.14)
-      typescript:
-        specifier: ^5.7.2
-        version: 5.9.3
-
-  apps/checkout:
-    dependencies:
-      '@shop/api-client':
-        specifier: workspace:*
-        version: link:../../packages/api-client
-      '@shop/ui':
-        specifier: workspace:*
-        version: link:../../packages/ui
-      '@vercel/microfrontends':
-        specifier: ^2.3.2
-        version: 2.3.2(next@16.2.4(react-dom@19.2.6(react@19.2.6))(react@19.2.6))(react-dom@19.2.6(react@19.2.6))(react@19.2.6)(vite@7.3.3(@types/node@22.19.17)(jiti@2.7.0)(lightningcss@1.32.0)(terser@5.47.1))
-      next:
-        specifier: 16.2.4
-        version: 16.2.4(@babel/core@7.29.0)(react-dom@19.2.6(react@19.2.6))(react@19.2.6)
-      react:
-        specifier: ^19.2.0
-        version: 19.2.6
-      react-dom:
-        specifier: ^19.2.0
-        version: 19.2.6(react@19.2.6)
-      remote-components:
-        specifier: 0.4.2
-        version: 0.4.2(next@16.2.4(@babel/core@7.29.0)(react-dom@19.2.6(react@19.2.6))(react@19.2.6))(react-dom@19.2.6(react@19.2.6))(react@19.2.6)
-    devDependencies:
-      '@shop/tsconfig':
-        specifier: workspace:*
-        version: link:../../packages/tsconfig
-      '@types/node':
-        specifier: ^22.0.0
-        version: 22.19.17
-      '@types/react':
-        specifier: ^19.0.7
-        version: 19.2.14
-      '@types/react-dom':
-        specifier: ^19.0.7
-        version: 19.2.3(@types/react@19.2.14)
-      typescript:
-        specifier: ^5.7.2
-        version: 5.9.3
-
-  apps/footer:
-    dependencies:
-      '@shop/ui':
-        specifier: workspace:*
-        version: link:../../packages/ui
-      '@vercel/microfrontends':
-        specifier: ^2.3.2
-        version: 2.3.2(next@16.2.4(react-dom@19.2.6(react@19.2.6))(react@19.2.6))(react-dom@19.2.6(react@19.2.6))(react@19.2.6)(vite@7.3.3(@types/node@22.19.17)(jiti@2.7.0)(lightningcss@1.32.0)(terser@5.47.1))
-      next:
-        specifier: 16.2.4
-        version: 16.2.4(@babel/core@7.29.0)(react-dom@19.2.6(react@19.2.6))(react@19.2.6)
-      react:
-        specifier: ^19.2.0
-        version: 19.2.6
-      react-dom:
-        specifier: ^19.2.0
-        version: 19.2.6(react@19.2.6)
-      remote-components:
-        specifier: 0.4.2
-        version: 0.4.2(next@16.2.4(@babel/core@7.29.0)(react-dom@19.2.6(react@19.2.6))(react@19.2.6))(react-dom@19.2.6(react@19.2.6))(react@19.2.6)
-    devDependencies:
-      '@shop/tsconfig':
-        specifier: workspace:*
-        version: link:../../packages/tsconfig
-      '@types/node':
-        specifier: ^22.0.0
-        version: 22.19.17
-      '@types/react':
-        specifier: ^19.0.7
-        version: 19.2.14
-      '@types/react-dom':
-        specifier: ^19.0.7
-        version: 19.2.3(@types/react@19.2.14)
-      typescript:
-        specifier: ^5.7.2
-        version: 5.9.3
-
-  apps/header:
-    dependencies:
-      '@shop/api-client':
-        specifier: workspace:*
-        version: link:../../packages/api-client
-      '@shop/ui':
-        specifier: workspace:*
-        version: link:../../packages/ui
-      '@vercel/microfrontends':
-        specifier: ^2.3.2
-        version: 2.3.2(next@16.2.4(react-dom@19.2.6(react@19.2.6))(react@19.2.6))(react-dom@19.2.6(react@19.2.6))(react@19.2.6)(vite@7.3.3(@types/node@22.19.17)(jiti@2.7.0)(lightningcss@1.32.0)(terser@5.47.1))
-      next:
-        specifier: 16.2.4
-        version: 16.2.4(@babel/core@7.29.0)(react-dom@19.2.6(react@19.2.6))(react@19.2.6)
-      react:
-        specifier: ^19.2.0
-        version: 19.2.6
-      react-dom:
-        specifier: ^19.2.0
-        version: 19.2.6(react@19.2.6)
-      remote-components:
-        specifier: 0.4.2
-        version: 0.4.2(next@16.2.4(@babel/core@7.29.0)(react-dom@19.2.6(react@19.2.6))(react@19.2.6))(react-dom@19.2.6(react@19.2.6))(react@19.2.6)
-    devDependencies:
-      '@shop/tsconfig':
-        specifier: workspace:*
-        version: link:../../packages/tsconfig
-      '@types/node':
-        specifier: ^22.0.0
-        version: 22.19.17
-      '@types/react':
-        specifier: ^19.0.7
-        version: 19.2.14
-      '@types/react-dom':
-        specifier: ^19.0.7
-        version: 19.2.3(@types/react@19.2.14)
-      typescript:
-        specifier: ^5.7.2
-        version: 5.9.3
-
-  apps/home:
-    dependencies:
-      '@shop/api-client':
-        specifier: workspace:*
-        version: link:../../packages/api-client
-      '@shop/ui':
-        specifier: workspace:*
-        version: link:../../packages/ui
-      '@vercel/microfrontends':
-        specifier: ^2.3.2
-        version: 2.3.2(next@16.2.4(react-dom@19.2.6(react@19.2.6))(react@19.2.6))(react-dom@19.2.6(react@19.2.6))(react@19.2.6)(vite@7.3.3(@types/node@22.19.17)(jiti@2.7.0)(lightningcss@1.32.0)(terser@5.47.1))
-      next:
-        specifier: 16.2.4
-        version: 16.2.4(@babel/core@7.29.0)(react-dom@19.2.6(react@19.2.6))(react@19.2.6)
-      react:
-        specifier: ^19.2.0
-        version: 19.2.6
-      react-dom:
-        specifier: ^19.2.0
-        version: 19.2.6(react@19.2.6)
-      remote-components:
-        specifier: 0.4.2
-        version: 0.4.2(next@16.2.4(@babel/core@7.29.0)(react-dom@19.2.6(react@19.2.6))(react@19.2.6))(react-dom@19.2.6(react@19.2.6))(react@19.2.6)
-    devDependencies:
-      '@shop/tsconfig':
-        specifier: workspace:*
-        version: link:../../packages/tsconfig
-      '@types/node':
-        specifier: ^22.0.0
-        version: 22.19.17
-      '@types/react':
-        specifier: ^19.0.7
-        version: 19.2.14
-      '@types/react-dom':
-        specifier: ^19.0.7
-        version: 19.2.3(@types/react@19.2.14)
-      typescript:
-        specifier: ^5.7.2
-        version: 5.9.3
-
-  apps/host:
+  apps/react-host/host:
     dependencies:
       '@vercel/microfrontends':
         specifier: 2.2.0
@@ -258,47 +61,7 @@ importers:
         specifier: ^7.2.4
         version: 7.3.3(@types/node@22.19.17)(jiti@2.7.0)(lightningcss@1.32.0)(terser@5.47.1)
 
-  apps/pdp:
-    dependencies:
-      '@shop/api-client':
-        specifier: workspace:*
-        version: link:../../packages/api-client
-      '@shop/ui':
-        specifier: workspace:*
-        version: link:../../packages/ui
-      '@vercel/microfrontends':
-        specifier: ^2.3.2
-        version: 2.3.2(next@16.2.4(react-dom@19.2.6(react@19.2.6))(react@19.2.6))(react-dom@19.2.6(react@19.2.6))(react@19.2.6)(vite@7.3.3(@types/node@22.19.17)(jiti@2.7.0)(lightningcss@1.32.0)(terser@5.47.1))
-      next:
-        specifier: 16.2.4
-        version: 16.2.4(@babel/core@7.29.0)(react-dom@19.2.6(react@19.2.6))(react@19.2.6)
-      react:
-        specifier: ^19.2.0
-        version: 19.2.6
-      react-dom:
-        specifier: ^19.2.0
-        version: 19.2.6(react@19.2.6)
-      remote-components:
-        specifier: 0.4.2
-        version: 0.4.2(next@16.2.4(@babel/core@7.29.0)(react-dom@19.2.6(react@19.2.6))(react@19.2.6))(react-dom@19.2.6(react@19.2.6))(react@19.2.6)
-    devDependencies:
-      '@shop/tsconfig':
-        specifier: workspace:*
-        version: link:../../packages/tsconfig
-      '@types/node':
-        specifier: ^22.0.0
-        version: 22.19.17
-      '@types/react':
-        specifier: ^19.0.7
-        version: 19.2.14
-      '@types/react-dom':
-        specifier: ^19.0.7
-        version: 19.2.3(@types/react@19.2.14)
-      typescript:
-        specifier: ^5.7.2
-        version: 5.9.3
-
-  apps/remote:
+  apps/react-host/remote:
     dependencies:
       '@vercel/microfrontends':
         specifier: 2.2.0
@@ -329,14 +92,14 @@ importers:
         specifier: 5.7.3
         version: 5.7.3
 
-  apps/sale:
+  apps/shop/beds:
     dependencies:
       '@shop/api-client':
         specifier: workspace:*
-        version: link:../../packages/api-client
+        version: link:../../../packages/api-client
       '@shop/ui':
         specifier: workspace:*
-        version: link:../../packages/ui
+        version: link:../../../packages/ui
       '@vercel/microfrontends':
         specifier: ^2.3.2
         version: 2.3.2(next@16.2.4(react-dom@19.2.6(react@19.2.6))(react@19.2.6))(react-dom@19.2.6(react@19.2.6))(react@19.2.6)(vite@7.3.3(@types/node@22.19.17)(jiti@2.7.0)(lightningcss@1.32.0)(terser@5.47.1))
@@ -355,7 +118,7 @@ importers:
     devDependencies:
       '@shop/tsconfig':
         specifier: workspace:*
-        version: link:../../packages/tsconfig
+        version: link:../../../packages/tsconfig
       '@types/node':
         specifier: ^22.0.0
         version: 22.19.17
@@ -369,14 +132,14 @@ importers:
         specifier: ^5.7.2
         version: 5.9.3
 
-  apps/shell:
+  apps/shop/checkout:
     dependencies:
       '@shop/api-client':
         specifier: workspace:*
-        version: link:../../packages/api-client
+        version: link:../../../packages/api-client
       '@shop/ui':
         specifier: workspace:*
-        version: link:../../packages/ui
+        version: link:../../../packages/ui
       '@vercel/microfrontends':
         specifier: ^2.3.2
         version: 2.3.2(next@16.2.4(react-dom@19.2.6(react@19.2.6))(react@19.2.6))(react-dom@19.2.6(react@19.2.6))(react@19.2.6)(vite@7.3.3(@types/node@22.19.17)(jiti@2.7.0)(lightningcss@1.32.0)(terser@5.47.1))
@@ -395,7 +158,244 @@ importers:
     devDependencies:
       '@shop/tsconfig':
         specifier: workspace:*
-        version: link:../../packages/tsconfig
+        version: link:../../../packages/tsconfig
+      '@types/node':
+        specifier: ^22.0.0
+        version: 22.19.17
+      '@types/react':
+        specifier: ^19.0.7
+        version: 19.2.14
+      '@types/react-dom':
+        specifier: ^19.0.7
+        version: 19.2.3(@types/react@19.2.14)
+      typescript:
+        specifier: ^5.7.2
+        version: 5.9.3
+
+  apps/shop/footer:
+    dependencies:
+      '@shop/ui':
+        specifier: workspace:*
+        version: link:../../../packages/ui
+      '@vercel/microfrontends':
+        specifier: ^2.3.2
+        version: 2.3.2(next@16.2.4(react-dom@19.2.6(react@19.2.6))(react@19.2.6))(react-dom@19.2.6(react@19.2.6))(react@19.2.6)(vite@7.3.3(@types/node@22.19.17)(jiti@2.7.0)(lightningcss@1.32.0)(terser@5.47.1))
+      next:
+        specifier: 16.2.4
+        version: 16.2.4(@babel/core@7.29.0)(react-dom@19.2.6(react@19.2.6))(react@19.2.6)
+      react:
+        specifier: ^19.2.0
+        version: 19.2.6
+      react-dom:
+        specifier: ^19.2.0
+        version: 19.2.6(react@19.2.6)
+      remote-components:
+        specifier: 0.4.2
+        version: 0.4.2(next@16.2.4(@babel/core@7.29.0)(react-dom@19.2.6(react@19.2.6))(react@19.2.6))(react-dom@19.2.6(react@19.2.6))(react@19.2.6)
+    devDependencies:
+      '@shop/tsconfig':
+        specifier: workspace:*
+        version: link:../../../packages/tsconfig
+      '@types/node':
+        specifier: ^22.0.0
+        version: 22.19.17
+      '@types/react':
+        specifier: ^19.0.7
+        version: 19.2.14
+      '@types/react-dom':
+        specifier: ^19.0.7
+        version: 19.2.3(@types/react@19.2.14)
+      typescript:
+        specifier: ^5.7.2
+        version: 5.9.3
+
+  apps/shop/header:
+    dependencies:
+      '@shop/api-client':
+        specifier: workspace:*
+        version: link:../../../packages/api-client
+      '@shop/ui':
+        specifier: workspace:*
+        version: link:../../../packages/ui
+      '@vercel/microfrontends':
+        specifier: ^2.3.2
+        version: 2.3.2(next@16.2.4(react-dom@19.2.6(react@19.2.6))(react@19.2.6))(react-dom@19.2.6(react@19.2.6))(react@19.2.6)(vite@7.3.3(@types/node@22.19.17)(jiti@2.7.0)(lightningcss@1.32.0)(terser@5.47.1))
+      next:
+        specifier: 16.2.4
+        version: 16.2.4(@babel/core@7.29.0)(react-dom@19.2.6(react@19.2.6))(react@19.2.6)
+      react:
+        specifier: ^19.2.0
+        version: 19.2.6
+      react-dom:
+        specifier: ^19.2.0
+        version: 19.2.6(react@19.2.6)
+      remote-components:
+        specifier: 0.4.2
+        version: 0.4.2(next@16.2.4(@babel/core@7.29.0)(react-dom@19.2.6(react@19.2.6))(react@19.2.6))(react-dom@19.2.6(react@19.2.6))(react@19.2.6)
+    devDependencies:
+      '@shop/tsconfig':
+        specifier: workspace:*
+        version: link:../../../packages/tsconfig
+      '@types/node':
+        specifier: ^22.0.0
+        version: 22.19.17
+      '@types/react':
+        specifier: ^19.0.7
+        version: 19.2.14
+      '@types/react-dom':
+        specifier: ^19.0.7
+        version: 19.2.3(@types/react@19.2.14)
+      typescript:
+        specifier: ^5.7.2
+        version: 5.9.3
+
+  apps/shop/home:
+    dependencies:
+      '@shop/api-client':
+        specifier: workspace:*
+        version: link:../../../packages/api-client
+      '@shop/ui':
+        specifier: workspace:*
+        version: link:../../../packages/ui
+      '@vercel/microfrontends':
+        specifier: ^2.3.2
+        version: 2.3.2(next@16.2.4(react-dom@19.2.6(react@19.2.6))(react@19.2.6))(react-dom@19.2.6(react@19.2.6))(react@19.2.6)(vite@7.3.3(@types/node@22.19.17)(jiti@2.7.0)(lightningcss@1.32.0)(terser@5.47.1))
+      next:
+        specifier: 16.2.4
+        version: 16.2.4(@babel/core@7.29.0)(react-dom@19.2.6(react@19.2.6))(react@19.2.6)
+      react:
+        specifier: ^19.2.0
+        version: 19.2.6
+      react-dom:
+        specifier: ^19.2.0
+        version: 19.2.6(react@19.2.6)
+      remote-components:
+        specifier: 0.4.2
+        version: 0.4.2(next@16.2.4(@babel/core@7.29.0)(react-dom@19.2.6(react@19.2.6))(react@19.2.6))(react-dom@19.2.6(react@19.2.6))(react@19.2.6)
+    devDependencies:
+      '@shop/tsconfig':
+        specifier: workspace:*
+        version: link:../../../packages/tsconfig
+      '@types/node':
+        specifier: ^22.0.0
+        version: 22.19.17
+      '@types/react':
+        specifier: ^19.0.7
+        version: 19.2.14
+      '@types/react-dom':
+        specifier: ^19.0.7
+        version: 19.2.3(@types/react@19.2.14)
+      typescript:
+        specifier: ^5.7.2
+        version: 5.9.3
+
+  apps/shop/pdp:
+    dependencies:
+      '@shop/api-client':
+        specifier: workspace:*
+        version: link:../../../packages/api-client
+      '@shop/ui':
+        specifier: workspace:*
+        version: link:../../../packages/ui
+      '@vercel/microfrontends':
+        specifier: ^2.3.2
+        version: 2.3.2(next@16.2.4(react-dom@19.2.6(react@19.2.6))(react@19.2.6))(react-dom@19.2.6(react@19.2.6))(react@19.2.6)(vite@7.3.3(@types/node@22.19.17)(jiti@2.7.0)(lightningcss@1.32.0)(terser@5.47.1))
+      next:
+        specifier: 16.2.4
+        version: 16.2.4(@babel/core@7.29.0)(react-dom@19.2.6(react@19.2.6))(react@19.2.6)
+      react:
+        specifier: ^19.2.0
+        version: 19.2.6
+      react-dom:
+        specifier: ^19.2.0
+        version: 19.2.6(react@19.2.6)
+      remote-components:
+        specifier: 0.4.2
+        version: 0.4.2(next@16.2.4(@babel/core@7.29.0)(react-dom@19.2.6(react@19.2.6))(react@19.2.6))(react-dom@19.2.6(react@19.2.6))(react@19.2.6)
+    devDependencies:
+      '@shop/tsconfig':
+        specifier: workspace:*
+        version: link:../../../packages/tsconfig
+      '@types/node':
+        specifier: ^22.0.0
+        version: 22.19.17
+      '@types/react':
+        specifier: ^19.0.7
+        version: 19.2.14
+      '@types/react-dom':
+        specifier: ^19.0.7
+        version: 19.2.3(@types/react@19.2.14)
+      typescript:
+        specifier: ^5.7.2
+        version: 5.9.3
+
+  apps/shop/sale:
+    dependencies:
+      '@shop/api-client':
+        specifier: workspace:*
+        version: link:../../../packages/api-client
+      '@shop/ui':
+        specifier: workspace:*
+        version: link:../../../packages/ui
+      '@vercel/microfrontends':
+        specifier: ^2.3.2
+        version: 2.3.2(next@16.2.4(react-dom@19.2.6(react@19.2.6))(react@19.2.6))(react-dom@19.2.6(react@19.2.6))(react@19.2.6)(vite@7.3.3(@types/node@22.19.17)(jiti@2.7.0)(lightningcss@1.32.0)(terser@5.47.1))
+      next:
+        specifier: 16.2.4
+        version: 16.2.4(@babel/core@7.29.0)(react-dom@19.2.6(react@19.2.6))(react@19.2.6)
+      react:
+        specifier: ^19.2.0
+        version: 19.2.6
+      react-dom:
+        specifier: ^19.2.0
+        version: 19.2.6(react@19.2.6)
+      remote-components:
+        specifier: 0.4.2
+        version: 0.4.2(next@16.2.4(@babel/core@7.29.0)(react-dom@19.2.6(react@19.2.6))(react@19.2.6))(react-dom@19.2.6(react@19.2.6))(react@19.2.6)
+    devDependencies:
+      '@shop/tsconfig':
+        specifier: workspace:*
+        version: link:../../../packages/tsconfig
+      '@types/node':
+        specifier: ^22.0.0
+        version: 22.19.17
+      '@types/react':
+        specifier: ^19.0.7
+        version: 19.2.14
+      '@types/react-dom':
+        specifier: ^19.0.7
+        version: 19.2.3(@types/react@19.2.14)
+      typescript:
+        specifier: ^5.7.2
+        version: 5.9.3
+
+  apps/shop/shell:
+    dependencies:
+      '@shop/api-client':
+        specifier: workspace:*
+        version: link:../../../packages/api-client
+      '@shop/ui':
+        specifier: workspace:*
+        version: link:../../../packages/ui
+      '@vercel/microfrontends':
+        specifier: ^2.3.2
+        version: 2.3.2(next@16.2.4(react-dom@19.2.6(react@19.2.6))(react@19.2.6))(react-dom@19.2.6(react@19.2.6))(react@19.2.6)(vite@7.3.3(@types/node@22.19.17)(jiti@2.7.0)(lightningcss@1.32.0)(terser@5.47.1))
+      next:
+        specifier: 16.2.4
+        version: 16.2.4(@babel/core@7.29.0)(react-dom@19.2.6(react@19.2.6))(react@19.2.6)
+      react:
+        specifier: ^19.2.0
+        version: 19.2.6
+      react-dom:
+        specifier: ^19.2.0
+        version: 19.2.6(react@19.2.6)
+      remote-components:
+        specifier: 0.4.2
+        version: 0.4.2(next@16.2.4(@babel/core@7.29.0)(react-dom@19.2.6(react@19.2.6))(react@19.2.6))(react-dom@19.2.6(react@19.2.6))(react@19.2.6)
+    devDependencies:
+      '@shop/tsconfig':
+        specifier: workspace:*
+        version: link:../../../packages/tsconfig
       '@types/node':
         specifier: ^22.0.0
         version: 22.19.17

@@ -10,8 +10,8 @@ import {
 import { codeLinks } from './code-links';
 
 const codeUrls = codeLinks(
-  'apps/host/src/examples/react-context-example.tsx',
-  'apps/remote/app/app-fragments/context/context-panel.tsx',
+  'apps/react-host/host/src/examples/react-context-example.tsx',
+  'apps/react-host/remote/app/app-fragments/context/context-panel.tsx',
 );
 
 const sharedModules = {
