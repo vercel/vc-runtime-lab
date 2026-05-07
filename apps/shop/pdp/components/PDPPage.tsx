@@ -31,13 +31,33 @@ export default function PDPPage({ productId = 'p-1' }: Props) {
 
   if (loading) {
     return (
-      <div className="px-6 lg:px-10 py-10">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 animate-pulse">
-          <div className="aspect-square bg-neutral-100" />
-          <div className="space-y-4">
-            <div className="h-6 bg-neutral-100 w-3/4" />
-            <div className="h-4 bg-neutral-100 w-1/4" />
-            <div className="h-20 bg-neutral-100" />
+      <div className="w-full">
+        <div className="max-w-[1280px] mx-auto px-6 lg:px-10 py-6">
+          <div className="h-3 bg-neutral-100 w-48 mb-6 animate-pulse" />
+
+          <div className="grid grid-cols-1 lg:grid-cols-[1fr_400px] gap-8 lg:gap-12">
+            <div className="flex gap-3 animate-pulse">
+              <div className="hidden md:flex flex-col gap-2 w-[72px]">
+                {[0, 1, 2, 3].map((i) => (
+                  <div key={i} className="aspect-square bg-neutral-100" />
+                ))}
+              </div>
+              <div className="flex-1 aspect-square bg-neutral-100" />
+            </div>
+
+            <div className="flex flex-col animate-pulse">
+              <div className="h-6 bg-neutral-100 w-3/4" />
+              <div className="h-4 bg-neutral-100 w-1/3 mt-2" />
+              <div className="h-6 bg-neutral-100 w-24 mt-4" />
+              <div className="mt-5 pb-5 border-b border-neutral-100">
+                <div className="h-20 bg-neutral-100" />
+              </div>
+              <div className="h-12 bg-neutral-200 mt-5" />
+              <div className="mt-6 space-y-3">
+                <div className="h-12 bg-neutral-100 border-b border-neutral-100" />
+                <div className="h-12 bg-neutral-100 border-b border-neutral-100" />
+              </div>
+            </div>
           </div>
         </div>
       </div>
