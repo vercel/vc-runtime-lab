@@ -28,7 +28,7 @@ export default function CheckoutPage() {
   const remaining = FREE_DELIVERY_THRESHOLD - subtotal
 
   return (
-    <div className="w-full px-6 lg:px-10 py-8">
+    <div className="w-full max-w-[1280px] mx-auto px-6 lg:px-10 py-8">
       <h1 className="text-2xl font-light tracking-tight mb-6">Bag</h1>
 
       <div className="mb-6">

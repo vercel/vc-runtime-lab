@@ -20,7 +20,7 @@ export default function ProductGrid({ products }: Props) {
         <Link
           key={product.id}
           href={`/product/${product.id}`}
-          className="group"
+          className="group block"
         >
           <div className="relative aspect-square overflow-hidden mb-3 bg-neutral-50">
             {/* eslint-disable-next-line @next/next/no-img-element */}

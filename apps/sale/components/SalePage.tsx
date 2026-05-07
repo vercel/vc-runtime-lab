@@ -64,7 +64,7 @@ export default function SalePage({ category }: Props) {
         </p>
       </div>
 
-      <div className="px-6 lg:px-10 py-8">
+      <div className="max-w-[1280px] mx-auto px-6 lg:px-10 py-8">
         <nav className="flex items-center gap-2 text-xs text-neutral-400 mb-6">
           <Link href="/" className="hover:text-black transition-colors">Home</Link>
           <span>/</span>
@@ -130,7 +130,7 @@ export default function SalePage({ category }: Props) {
         ) : (
           <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-x-4 gap-y-8 pt-8">
             {products.map((p) => (
-              <Link key={p.id} href={`/product/${p.id}`} className="group">
+              <Link key={p.id} href={`/product/${p.id}`} className="group block">
                 <div className="relative aspect-square mb-3 overflow-hidden bg-neutral-50">
                   {/* eslint-disable-next-line @next/next/no-img-element */}
                   <img

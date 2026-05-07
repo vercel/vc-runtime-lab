@@ -58,7 +58,7 @@ export default function PDPPage({ productId = 'p-1' }: Props) {
 
   return (
     <div className="w-full">
-      <div className="px-6 lg:px-10 py-6">
+      <div className="max-w-[1280px] mx-auto px-6 lg:px-10 py-6">
         <nav className="flex items-center gap-2 text-xs text-neutral-400 mb-6">
           <Link href="/" className="hover:text-black transition-colors">Home</Link>
           <span>/</span>

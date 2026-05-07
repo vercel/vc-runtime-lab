@@ -72,7 +72,7 @@ export default function MattressesPage({ subcategory = 'all' }: Props) {
         </p>
       </div>
 
-      <div className="px-6 lg:px-10 py-8">
+      <div className="max-w-[1280px] mx-auto px-6 lg:px-10 py-8">
         <nav className="flex items-center gap-2 text-xs text-neutral-400 mb-6">
           <Link href="/" className="hover:text-black transition-colors">Home</Link>
           <span>/</span>
