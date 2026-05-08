@@ -107,29 +107,29 @@ importers:
         specifier: 16.2.4
         version: 16.2.4(@babel/core@7.29.0)(react-dom@19.2.6(react@19.2.6))(react@19.2.6)
       react:
-        specifier: ^19.2.0
+        specifier: ^19.2.5
         version: 19.2.6
       react-dom:
-        specifier: ^19.2.0
+        specifier: ^19.2.5
         version: 19.2.6(react@19.2.6)
       remote-components:
-        specifier: 0.4.1
-        version: 0.4.1(next@16.2.4(react-dom@19.2.6(react@19.2.6))(react@19.2.6))(react-dom@19.2.6(react@19.2.6))(react@19.2.6)
+        specifier: ^0.4.2
+        version: 0.4.3(next@16.2.4(react-dom@19.2.6(react@19.2.6))(react@19.2.6))(react-dom@19.2.6(react@19.2.6))(react@19.2.6)
     devDependencies:
       '@shop/tsconfig':
         specifier: workspace:*
         version: link:../packages/tsconfig
       '@types/node':
-        specifier: ^22.0.0
+        specifier: ^22.19.17
         version: 22.19.17
       '@types/react':
-        specifier: ^19.0.7
+        specifier: ^19.2.14
         version: 19.2.14
       '@types/react-dom':
-        specifier: ^19.0.7
+        specifier: ^19.2.3
         version: 19.2.3(@types/react@19.2.14)
       typescript:
-        specifier: ^5.7.2
+        specifier: ^5.9.3
         version: 5.9.3
 
   apps/shop/checkout:
@@ -147,29 +147,29 @@ importers:
         specifier: 16.2.4
         version: 16.2.4(@babel/core@7.29.0)(react-dom@19.2.6(react@19.2.6))(react@19.2.6)
       react:
-        specifier: ^19.2.0
+        specifier: ^19.2.5
         version: 19.2.6
       react-dom:
-        specifier: ^19.2.0
+        specifier: ^19.2.5
         version: 19.2.6(react@19.2.6)
       remote-components:
-        specifier: 0.4.1
-        version: 0.4.1(next@16.2.4(react-dom@19.2.6(react@19.2.6))(react@19.2.6))(react-dom@19.2.6(react@19.2.6))(react@19.2.6)
+        specifier: ^0.4.2
+        version: 0.4.3(next@16.2.4(react-dom@19.2.6(react@19.2.6))(react@19.2.6))(react-dom@19.2.6(react@19.2.6))(react@19.2.6)
     devDependencies:
       '@shop/tsconfig':
         specifier: workspace:*
         version: link:../packages/tsconfig
       '@types/node':
-        specifier: ^22.0.0
+        specifier: ^22.19.17
         version: 22.19.17
       '@types/react':
-        specifier: ^19.0.7
+        specifier: ^19.2.14
         version: 19.2.14
       '@types/react-dom':
-        specifier: ^19.0.7
+        specifier: ^19.2.3
         version: 19.2.3(@types/react@19.2.14)
       typescript:
-        specifier: ^5.7.2
+        specifier: ^5.9.3
         version: 5.9.3
 
   apps/shop/footer:
@@ -184,29 +184,29 @@ importers:
         specifier: 16.2.4
         version: 16.2.4(@babel/core@7.29.0)(react-dom@19.2.6(react@19.2.6))(react@19.2.6)
       react:
-        specifier: ^19.2.0
+        specifier: ^19.2.5
         version: 19.2.6
       react-dom:
-        specifier: ^19.2.0
+        specifier: ^19.2.5
         version: 19.2.6(react@19.2.6)
       remote-components:
-        specifier: 0.4.1
-        version: 0.4.1(next@16.2.4(react-dom@19.2.6(react@19.2.6))(react@19.2.6))(react-dom@19.2.6(react@19.2.6))(react@19.2.6)
+        specifier: ^0.4.2
+        version: 0.4.3(next@16.2.4(react-dom@19.2.6(react@19.2.6))(react@19.2.6))(react-dom@19.2.6(react@19.2.6))(react@19.2.6)
     devDependencies:
       '@shop/tsconfig':
         specifier: workspace:*
         version: link:../packages/tsconfig
       '@types/node':
-        specifier: ^22.0.0
+        specifier: ^22.19.17
         version: 22.19.17
       '@types/react':
-        specifier: ^19.0.7
+        specifier: ^19.2.14
         version: 19.2.14
       '@types/react-dom':
-        specifier: ^19.0.7
+        specifier: ^19.2.3
         version: 19.2.3(@types/react@19.2.14)
       typescript:
-        specifier: ^5.7.2
+        specifier: ^5.9.3
         version: 5.9.3
 
   apps/shop/header:
@@ -224,29 +224,29 @@ importers:
         specifier: 16.2.4
         version: 16.2.4(@babel/core@7.29.0)(react-dom@19.2.6(react@19.2.6))(react@19.2.6)
       react:
-        specifier: ^19.2.0
+        specifier: ^19.2.5
         version: 19.2.6
       react-dom:
-        specifier: ^19.2.0
+        specifier: ^19.2.5
         version: 19.2.6(react@19.2.6)
       remote-components:
-        specifier: 0.4.1
-        version: 0.4.1(next@16.2.4(react-dom@19.2.6(react@19.2.6))(react@19.2.6))(react-dom@19.2.6(react@19.2.6))(react@19.2.6)
+        specifier: ^0.4.2
+        version: 0.4.3(next@16.2.4(react-dom@19.2.6(react@19.2.6))(react@19.2.6))(react-dom@19.2.6(react@19.2.6))(react@19.2.6)
     devDependencies:
       '@shop/tsconfig':
         specifier: workspace:*
         version: link:../packages/tsconfig
       '@types/node':
-        specifier: ^22.0.0
+        specifier: ^22.19.17
         version: 22.19.17
       '@types/react':
-        specifier: ^19.0.7
+        specifier: ^19.2.14
         version: 19.2.14
       '@types/react-dom':
-        specifier: ^19.0.7
+        specifier: ^19.2.3
         version: 19.2.3(@types/react@19.2.14)
       typescript:
-        specifier: ^5.7.2
+        specifier: ^5.9.3
         version: 5.9.3
 
   apps/shop/home:
@@ -264,29 +264,29 @@ importers:
         specifier: 16.2.4
         version: 16.2.4(@babel/core@7.29.0)(react-dom@19.2.6(react@19.2.6))(react@19.2.6)
       react:
-        specifier: ^19.2.0
+        specifier: ^19.2.5
         version: 19.2.6
       react-dom:
-        specifier: ^19.2.0
+        specifier: ^19.2.5
         version: 19.2.6(react@19.2.6)
       remote-components:
-        specifier: 0.4.1
-        version: 0.4.1(next@16.2.4(react-dom@19.2.6(react@19.2.6))(react@19.2.6))(react-dom@19.2.6(react@19.2.6))(react@19.2.6)
+        specifier: ^0.4.2
+        version: 0.4.3(next@16.2.4(react-dom@19.2.6(react@19.2.6))(react@19.2.6))(react-dom@19.2.6(react@19.2.6))(react@19.2.6)
     devDependencies:
       '@shop/tsconfig':
         specifier: workspace:*
         version: link:../packages/tsconfig
       '@types/node':
-        specifier: ^22.0.0
+        specifier: ^22.19.17
         version: 22.19.17
       '@types/react':
-        specifier: ^19.0.7
+        specifier: ^19.2.14
         version: 19.2.14
       '@types/react-dom':
-        specifier: ^19.0.7
+        specifier: ^19.2.3
         version: 19.2.3(@types/react@19.2.14)
       typescript:
-        specifier: ^5.7.2
+        specifier: ^5.9.3
         version: 5.9.3
 
   apps/shop/packages/api-client:
@@ -303,10 +303,10 @@ importers:
   apps/shop/packages/ui:
     dependencies:
       react:
-        specifier: ^19.0.0
+        specifier: ^19.2.5
         version: 19.2.6
       react-dom:
-        specifier: ^19.0.0
+        specifier: ^19.2.5
         version: 19.2.6(react@19.2.6)
     devDependencies:
       '@shop/tsconfig':
@@ -334,29 +334,29 @@ importers:
         specifier: 16.2.4
         version: 16.2.4(@babel/core@7.29.0)(react-dom@19.2.6(react@19.2.6))(react@19.2.6)
       react:
-        specifier: ^19.2.0
+        specifier: ^19.2.5
         version: 19.2.6
       react-dom:
-        specifier: ^19.2.0
+        specifier: ^19.2.5
         version: 19.2.6(react@19.2.6)
       remote-components:
-        specifier: 0.4.1
-        version: 0.4.1(next@16.2.4(react-dom@19.2.6(react@19.2.6))(react@19.2.6))(react-dom@19.2.6(react@19.2.6))(react@19.2.6)
+        specifier: ^0.4.2
+        version: 0.4.3(next@16.2.4(react-dom@19.2.6(react@19.2.6))(react@19.2.6))(react-dom@19.2.6(react@19.2.6))(react@19.2.6)
     devDependencies:
       '@shop/tsconfig':
         specifier: workspace:*
         version: link:../packages/tsconfig
       '@types/node':
-        specifier: ^22.0.0
+        specifier: ^22.19.17
         version: 22.19.17
       '@types/react':
-        specifier: ^19.0.7
+        specifier: ^19.2.14
         version: 19.2.14
       '@types/react-dom':
-        specifier: ^19.0.7
+        specifier: ^19.2.3
         version: 19.2.3(@types/react@19.2.14)
       typescript:
-        specifier: ^5.7.2
+        specifier: ^5.9.3
         version: 5.9.3
 
   apps/shop/sale:
@@ -374,29 +374,29 @@ importers:
         specifier: 16.2.4
         version: 16.2.4(@babel/core@7.29.0)(react-dom@19.2.6(react@19.2.6))(react@19.2.6)
       react:
-        specifier: ^19.2.0
+        specifier: ^19.2.5
         version: 19.2.6
       react-dom:
-        specifier: ^19.2.0
+        specifier: ^19.2.5
         version: 19.2.6(react@19.2.6)
       remote-components:
-        specifier: 0.4.1
-        version: 0.4.1(next@16.2.4(react-dom@19.2.6(react@19.2.6))(react@19.2.6))(react-dom@19.2.6(react@19.2.6))(react@19.2.6)
+        specifier: ^0.4.2
+        version: 0.4.3(next@16.2.4(react-dom@19.2.6(react@19.2.6))(react@19.2.6))(react-dom@19.2.6(react@19.2.6))(react@19.2.6)
     devDependencies:
       '@shop/tsconfig':
         specifier: workspace:*
         version: link:../packages/tsconfig
       '@types/node':
-        specifier: ^22.0.0
+        specifier: ^22.19.17
         version: 22.19.17
       '@types/react':
-        specifier: ^19.0.7
+        specifier: ^19.2.14
         version: 19.2.14
       '@types/react-dom':
-        specifier: ^19.0.7
+        specifier: ^19.2.3
         version: 19.2.3(@types/react@19.2.14)
       typescript:
-        specifier: ^5.7.2
+        specifier: ^5.9.3
         version: 5.9.3
 
   apps/shop/shell:
@@ -414,29 +414,29 @@ importers:
         specifier: 16.2.4
         version: 16.2.4(@babel/core@7.29.0)(react-dom@19.2.6(react@19.2.6))(react@19.2.6)
       react:
-        specifier: ^19.2.0
+        specifier: ^19.2.5
         version: 19.2.6
       react-dom:
-        specifier: ^19.2.0
+        specifier: ^19.2.5
         version: 19.2.6(react@19.2.6)
       remote-components:
-        specifier: 0.4.1
-        version: 0.4.1(next@16.2.4(react-dom@19.2.6(react@19.2.6))(react@19.2.6))(react-dom@19.2.6(react@19.2.6))(react@19.2.6)
+        specifier: ^0.4.2
+        version: 0.4.3(next@16.2.4(react-dom@19.2.6(react@19.2.6))(react@19.2.6))(react-dom@19.2.6(react@19.2.6))(react@19.2.6)
     devDependencies:
       '@shop/tsconfig':
         specifier: workspace:*
         version: link:../packages/tsconfig
       '@types/node':
-        specifier: ^22.0.0
+        specifier: ^22.19.17
         version: 22.19.17
       '@types/react':
-        specifier: ^19.0.7
+        specifier: ^19.2.14
         version: 19.2.14
       '@types/react-dom':
-        specifier: ^19.0.7
+        specifier: ^19.2.3
         version: 19.2.3(@types/react@19.2.14)
       typescript:
-        specifier: ^5.7.2
+        specifier: ^5.9.3
         version: 5.9.3
 
 packages:
@@ -1809,20 +1809,6 @@ packages:
   react@19.2.6:
     resolution: {integrity: sha512-sfWGGfavi0xr8Pg0sVsyHMAOziVYKgPLNrS7ig+ivMNb3wbCBw3KxtflsGBAwD3gYQlE/AEZsTLgToRrSCjb0Q==}
     engines: {node: '>=0.10.0'}
-
-  remote-components@0.4.1:
-    resolution: {integrity: sha512-QW9gTbQUF2bIzZKOUYJPwKhymJqxhFigbn2/M+IqDcBbhFgNcjw/xq/k+liLp3agrNG3Cc6Gj8xyVttd0gLR7Q==}
-    peerDependencies:
-      next: '>=15'
-      react: ^19.2.3
-      react-dom: ^19.2.3
-    peerDependenciesMeta:
-      next:
-        optional: true
-      react:
-        optional: true
-      react-dom:
-        optional: true
 
   remote-components@0.4.3:
     resolution: {integrity: sha512-p98FqLoDx4/oBlNe3sSMfL1WQfC9COqlxUcIfqjIx7WE+JV4Nt9YFYV0O0ztPeM5UY1pe4oFTtt0WPoDQAyQZg==}
@@ -3241,29 +3227,6 @@ snapshots:
       webpack-sources: 3.4.1
 
   react@19.2.6: {}
-
-  remote-components@0.4.1(next@16.2.4(react-dom@19.2.6(react@19.2.6))(react@19.2.6))(react-dom@19.2.6(react@19.2.6))(react@19.2.6):
-    dependencies:
-      enhanced-resolve: 5.21.0
-      find-up: 7.0.0
-      parse5: 7.3.0
-      picocolors: 1.1.1
-      react-property: 2.0.2
-      react-server-dom-turbopack: 19.2.6(react-dom@19.2.6(react@19.2.6))(react@19.2.6)
-      react-server-dom-webpack: 19.2.6(react-dom@19.2.6(react@19.2.6))(react@19.2.6)(webpack@5.106.2)
-      style-to-js: 1.1.21
-      tsconfig-paths-webpack-plugin: 4.2.0
-      web-streams-polyfill: 4.2.0
-      webpack: 5.106.2
-    optionalDependencies:
-      next: 16.2.4(@babel/core@7.29.0)(react-dom@19.2.6(react@19.2.6))(react@19.2.6)
-      react: 19.2.6
-      react-dom: 19.2.6(react@19.2.6)
-    transitivePeerDependencies:
-      - '@swc/core'
-      - esbuild
-      - uglify-js
-      - webpack-cli
 
   remote-components@0.4.3(next@16.2.4(react-dom@19.2.6(react@19.2.6))(react@19.2.6))(react-dom@19.2.6(react@19.2.6))(react@19.2.6):
     dependencies:

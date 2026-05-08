@@ -14,15 +14,15 @@
     "@shop/ui": "workspace:*",
     "@vercel/microfrontends": "^2.3.2",
     "next": "16.2.4",
-    "react": "^19.2.0",
-    "react-dom": "^19.2.0",
-    "remote-components": "0.4.1"
+    "react": "^19.2.5",
+    "react-dom": "^19.2.5",
+    "remote-components": "^0.4.2"
   },
   "devDependencies": {
     "@shop/tsconfig": "workspace:*",
-    "@types/node": "^22.0.0",
-    "@types/react": "^19.0.7",
-    "@types/react-dom": "^19.0.7",
-    "typescript": "^5.7.2"
+    "@types/node": "^22.19.17",
+    "@types/react": "^19.2.14",
+    "@types/react-dom": "^19.2.3",
+    "typescript": "^5.9.3"
   }
 }
