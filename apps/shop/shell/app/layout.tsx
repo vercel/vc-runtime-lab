@@ -12,8 +12,6 @@ import { HeaderSkeleton, FooterSkeleton } from '@/components/Skeletons'
 
 const geist = Geist({ subsets: ['latin'] })
 
-export const dynamic = 'force-dynamic'
-
 export const metadata: Metadata = {
   title: { default: 'Shop', template: '%s | Shop' },
   description: 'Beds, mattresses and bedroom essentials, made to last.',
