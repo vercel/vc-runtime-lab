@@ -18,10 +18,10 @@ export default function CartBadge() {
     readCount()
 
     window.addEventListener('focus', readCount)
-    window.addEventListener('pandora:cart-updated', readCount)
+    window.addEventListener('shop:cart-updated', readCount)
     return () => {
       window.removeEventListener('focus', readCount)
-      window.removeEventListener('pandora:cart-updated', readCount)
+      window.removeEventListener('shop:cart-updated', readCount)
     }
   }, [])
 

@@ -5,7 +5,7 @@ export interface CartEntry {
   quantity: number
 }
 
-export const CART_COOKIE_NAME = 'pandora_cart'
+export const CART_COOKIE_NAME = 'shop_cart'
 export const CART_COOKIE_MAX_AGE = 60 * 60 * 24 * 7
 
 export function encodeCart(entries: CartEntry[]): string {
@@ -112,7 +112,7 @@ export function writeCartCookieFromDocument(entries: CartEntry[]): void {
   if (typeof document === 'undefined') return
   document.cookie = `${CART_COOKIE_NAME}=${encodeURIComponent(encodeCart(entries))}; path=/; max-age=${CART_COOKIE_MAX_AGE}`
   if (typeof window !== 'undefined') {
-    window.dispatchEvent(new Event('pandora:cart-updated'))
+    window.dispatchEvent(new Event('shop:cart-updated'))
   }
 }
 
