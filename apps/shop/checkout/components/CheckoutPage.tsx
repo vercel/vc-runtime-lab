@@ -2,26 +2,46 @@
 
 import { useState, useEffect } from 'react'
 import Image from 'next/image'
-import { getCartItems, setCartItems, type CartItem } from '@shop/api-client'
+import {
+  getCartItems,
+  setCartItems,
+  writeCartCookieFromDocument,
+  type CartItem,
+} from '@shop/api-client'
 
 const FREE_DELIVERY_THRESHOLD = 75
 
 export default function CheckoutPage() {
   const [items, setItems] = useState<CartItem[]>([])
   const [loading, setLoading] = useState(true)
-  const [quantities, setQuantities] = useState<Record<string, number>>({})
   const [orderPlaced, setOrderPlaced] = useState(false)
 
   useEffect(() => {
     getCartItems()
-      .then((data) => {
-        setItems(data)
-        setQuantities(Object.fromEntries(data.map((i) => [i.id, i.quantity])))
-      })
+      .then((data) => setItems(data))
       .finally(() => setLoading(false))
   }, [])
 
-  const subtotal = items.reduce((s, i) => s + i.price * (quantities[i.id] ?? i.quantity), 0)
+  // Single source of truth: mutate `items` and mirror to the cart cookie.
+  const commitItems = (next: CartItem[]) => {
+    setItems(next)
+    setCartItems(next)
+  }
+
+  const updateQuantity = (id: string, quantity: number) => {
+    if (quantity <= 0) {
+      commitItems(items.filter((i) => i.id !== id))
+      return
+    }
+    commitItems(items.map((i) => (i.id === id ? { ...i, quantity } : i)))
+  }
+
+  const placeOrder = () => {
+    writeCartCookieFromDocument([])
+    setOrderPlaced(true)
+  }
+
+  const subtotal = items.reduce((s, i) => s + i.price * i.quantity, 0)
   const shipping = subtotal >= FREE_DELIVERY_THRESHOLD ? 0 : 2.99
   const total = subtotal + shipping
   const progressPct = Math.min((subtotal / FREE_DELIVERY_THRESHOLD) * 100, 100)
@@ -29,9 +49,6 @@ export default function CheckoutPage() {
   const orderNumber = `SH-${Math.floor(Math.random() * 900000) + 100000}`
 
   if (orderPlaced) {
-    if (typeof window !== 'undefined') {
-      try { window.localStorage.removeItem('shop:cart') } catch {}
-    }
     return (
       <div className="w-full max-w-[640px] mx-auto px-6 lg:px-10 py-20 text-center">
         <div className="w-14 h-14 mx-auto mb-6 rounded-full bg-green-100 flex items-center justify-center">
@@ -105,76 +122,59 @@ export default function CheckoutPage() {
             </div>
           ) : (
             <ul className="divide-y divide-neutral-100">
-              {items.map((item) => {
-                const qty = quantities[item.id] ?? item.quantity
-                return (
-                  <li key={item.id} className="flex gap-5 py-6">
-                    <Image
-                      src={item.image}
-                      alt={item.name}
-                      width={120}
-                      height={120}
-                      className="w-[120px] h-[120px] object-cover flex-shrink-0 bg-neutral-50"
-                    />
-                    <div className="flex-1 min-w-0">
-                      <div className="flex justify-between items-start gap-2">
-                        <div className="flex-1">
-                          <p className="text-sm font-medium leading-snug">{item.name}</p>
-                          <p className="text-xs text-neutral-500 mt-1">{item.material}</p>
-                          <p className="text-sm font-medium mt-1">£{item.price}</p>
-                        </div>
-                        <button
-                          className="text-neutral-400 hover:text-black transition-colors flex-shrink-0"
-                          aria-label={`Remove ${item.name}`}
-                          onClick={() => {
-                            const next = items.filter((i) => i.id !== item.id)
-                            setItems(next)
-                            setCartItems(next)
-                          }}
-                        >
-                          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
-                            <line x1="18" y1="6" x2="6" y2="18" />
-                            <line x1="6" y1="6" x2="18" y2="18" />
-                          </svg>
-                        </button>
+              {items.map((item) => (
+                <li key={item.id} className="flex gap-5 py-6">
+                  <Image
+                    src={item.image}
+                    alt={item.name}
+                    width={120}
+                    height={120}
+                    className="w-[120px] h-[120px] object-cover flex-shrink-0 bg-neutral-50"
+                  />
+                  <div className="flex-1 min-w-0">
+                    <div className="flex justify-between items-start gap-2">
+                      <div className="flex-1">
+                        <p className="text-sm font-medium leading-snug">{item.name}</p>
+                        <p className="text-xs text-neutral-500 mt-1">{item.material}</p>
+                        <p className="text-sm font-medium mt-1">£{item.price}</p>
                       </div>
-
-                      <div className="flex items-center justify-between mt-3">
-                        <div className="flex items-center border border-neutral-300">
-                          <button
-                            className="w-8 h-8 flex items-center justify-center text-lg text-neutral-500 hover:text-black transition-colors"
-                            onClick={() =>
-                              setQuantities((prev) => ({
-                                ...prev,
-                                [item.id]: Math.max(1, (prev[item.id] ?? qty) - 1),
-                              }))
-                            }
-                            aria-label="Decrease quantity"
-                          >
-                            –
-                          </button>
-                          <span className="w-8 text-center text-sm">{qty}</span>
-                          <button
-                            className="w-8 h-8 flex items-center justify-center text-lg text-neutral-500 hover:text-black transition-colors"
-                            onClick={() =>
-                              setQuantities((prev) => ({
-                                ...prev,
-                                [item.id]: (prev[item.id] ?? qty) + 1,
-                              }))
-                            }
-                            aria-label="Increase quantity"
-                          >
-                            +
-                          </button>
-                        </div>
-                        <button className="text-xs text-neutral-500 hover:text-black underline underline-offset-2 transition-colors">
-                          Save to Wishlist
-                        </button>
-                      </div>
+                      <button
+                        className="text-neutral-400 hover:text-black transition-colors flex-shrink-0"
+                        aria-label={`Remove ${item.name}`}
+                        onClick={() => updateQuantity(item.id, 0)}
+                      >
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
+                          <line x1="18" y1="6" x2="6" y2="18" />
+                          <line x1="6" y1="6" x2="18" y2="18" />
+                        </svg>
+                      </button>
                     </div>
-                  </li>
-                )
-              })}
+
+                    <div className="flex items-center justify-between mt-3">
+                      <div className="flex items-center border border-neutral-300">
+                        <button
+                          className="w-8 h-8 flex items-center justify-center text-lg text-neutral-500 hover:text-black transition-colors"
+                          onClick={() => updateQuantity(item.id, Math.max(1, item.quantity - 1))}
+                          aria-label="Decrease quantity"
+                        >
+                          –
+                        </button>
+                        <span className="w-8 text-center text-sm">{item.quantity}</span>
+                        <button
+                          className="w-8 h-8 flex items-center justify-center text-lg text-neutral-500 hover:text-black transition-colors"
+                          onClick={() => updateQuantity(item.id, item.quantity + 1)}
+                          aria-label="Increase quantity"
+                        >
+                          +
+                        </button>
+                      </div>
+                      <button className="text-xs text-neutral-500 hover:text-black underline underline-offset-2 transition-colors">
+                        Save to Wishlist
+                      </button>
+                    </div>
+                  </div>
+                </li>
+              ))}
             </ul>
           )}
         </div>
@@ -210,7 +210,7 @@ export default function CheckoutPage() {
             </div>
 
             <button
-              onClick={() => setOrderPlaced(true)}
+              onClick={placeOrder}
               disabled={items.length === 0}
               className="w-full bg-black text-white text-xs font-medium tracking-widest uppercase py-4 hover:bg-neutral-800 transition-colors disabled:bg-neutral-300 disabled:cursor-not-allowed"
             >

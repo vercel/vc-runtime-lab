@@ -21,8 +21,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
         <PrefetchCrossZoneLinksProvider>
           <Providers>
             <Suspense fallback={<HeaderSkeleton />}>
-              {/* DEBUG: pointing at pandora's deployed header instead of our own shop-header */}
-              <ConsumeRemoteComponent isolate={false} src="https://pandora-shell.vercel.app/components/header" />
+              <ConsumeRemoteComponent isolate={false} src="/components/header" />
             </Suspense>
             <main className="flex-1">{children}</main>
             <Suspense fallback={<FooterSkeleton />}>

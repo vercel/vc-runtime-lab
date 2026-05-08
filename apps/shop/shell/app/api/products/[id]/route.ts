@@ -1,5 +1,5 @@
 import { NextResponse } from 'next/server'
-import { MOCK_PRODUCTS } from '../route'
+import { findProductById } from '@shop/api-client'
 
 interface Props {
   params: Promise<{ id: string }>
@@ -7,7 +7,7 @@ interface Props {
 
 export async function GET(_req: Request, { params }: Props) {
   const { id } = await params
-  const product = MOCK_PRODUCTS.find((p) => p.id === id)
+  const product = findProductById(id)
   if (!product) return NextResponse.json({ error: 'Not found' }, { status: 404 })
   return NextResponse.json(product)
 }

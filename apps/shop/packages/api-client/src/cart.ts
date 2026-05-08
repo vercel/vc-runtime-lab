@@ -1,76 +1,141 @@
 import type { CartItem, Product } from './types'
 
-const STORAGE_KEY = 'shop:cart'
+export interface CartEntry {
+  productId: string
+  quantity: number
+}
 
-function readStorage(): CartItem[] | null {
-  if (typeof window === 'undefined') return null
+export const CART_COOKIE_NAME = 'pandora_cart'
+export const CART_COOKIE_MAX_AGE = 60 * 60 * 24 * 7
+
+export function encodeCart(entries: CartEntry[]): string {
+  return JSON.stringify(entries)
+}
+
+export function decodeCart(raw: string | undefined | null): CartEntry[] {
+  if (!raw) return []
   try {
-    const raw = window.localStorage.getItem(STORAGE_KEY)
-    return raw ? (JSON.parse(raw) as CartItem[]) : null
+    const parsed = JSON.parse(raw)
+    if (!Array.isArray(parsed)) return []
+    return parsed.filter(
+      (e): e is CartEntry =>
+        typeof e?.productId === 'string' &&
+        typeof e?.quantity === 'number' &&
+        e.quantity > 0,
+    )
   } catch {
-    return null
+    return []
   }
 }
 
-const UPDATE_EVENT = 'shop:cart:updated'
-
-function writeStorage(items: CartItem[]) {
-  if (typeof window === 'undefined') return
-  try {
-    window.localStorage.setItem(STORAGE_KEY, JSON.stringify(items))
-    window.dispatchEvent(new CustomEvent(UPDATE_EVENT))
-  } catch {}
+export function cartCount(entries: CartEntry[]): number {
+  return entries.reduce((sum, e) => sum + e.quantity, 0)
 }
 
-export function subscribeToCart(callback: () => void): () => void {
-  if (typeof window === 'undefined') return () => {}
-  const onChange = () => callback()
-  window.addEventListener(UPDATE_EVENT, onChange)
-  // Cross-tab sync via storage event
-  const onStorage = (e: StorageEvent) => {
-    if (e.key === STORAGE_KEY) callback()
-  }
-  window.addEventListener('storage', onStorage)
-  return () => {
-    window.removeEventListener(UPDATE_EVENT, onChange)
-    window.removeEventListener('storage', onStorage)
-  }
+export function cartSubtotal(entries: CartEntry[], products: Product[]): number {
+  return entries.reduce((sum, e) => {
+    const product = products.find((p) => p.id === e.productId)
+    return product ? sum + product.price * e.quantity : sum
+  }, 0)
 }
 
-export async function getCartItems(): Promise<CartItem[]> {
-  const stored = readStorage()
-  if (stored !== null) return stored
-  try {
-    const res = await fetch('/api/cart')
-    if (res.ok) {
-      const items = (await res.json()) as CartItem[]
-      writeStorage(items)
-      return items
-    }
-  } catch {}
-  return []
-}
-
-export function addToCart(product: Product, quantity = 1): CartItem[] {
-  const stored = readStorage() ?? []
-  const existing = stored.find((i) => i.productId === product.id)
+export function addToCartEntry(
+  entries: CartEntry[],
+  productId: string,
+  quantity = 1,
+): CartEntry[] {
+  const existing = entries.find((e) => e.productId === productId)
   if (existing) {
-    existing.quantity += quantity
-  } else {
-    stored.push({
-      id: `ci-${product.id}-${Date.now()}`,
-      productId: product.id,
-      name: product.name,
-      price: product.price,
-      quantity,
-      image: product.image,
-      material: product.material,
-    })
+    return entries.map((e) =>
+      e.productId === productId ? { ...e, quantity: e.quantity + quantity } : e,
+    )
   }
-  writeStorage(stored)
-  return stored
+  return [...entries, { productId, quantity }]
 }
 
-export function setCartItems(items: CartItem[]) {
-  writeStorage(items)
+export function updateCartQuantity(
+  entries: CartEntry[],
+  productId: string,
+  quantity: number,
+): CartEntry[] {
+  if (quantity <= 0) return removeCartEntry(entries, productId)
+  return entries.map((e) =>
+    e.productId === productId ? { ...e, quantity } : e,
+  )
+}
+
+export function removeCartEntry(
+  entries: CartEntry[],
+  productId: string,
+): CartEntry[] {
+  return entries.filter((e) => e.productId !== productId)
+}
+
+export function hydrateCart(
+  entries: CartEntry[],
+  products: Product[],
+): CartItem[] {
+  return entries
+    .map((e) => {
+      const product = products.find((p) => p.id === e.productId)
+      if (!product) return null
+      return {
+        id: `ci-${e.productId}`,
+        productId: e.productId,
+        name: product.name,
+        price: product.price,
+        quantity: e.quantity,
+        image: product.image,
+        material: product.material,
+      } satisfies CartItem
+    })
+    .filter((c): c is CartItem => c !== null)
+}
+
+/**
+ * Read the cart cookie value from `document.cookie`. Client-side only.
+ */
+export function readCartCookieFromDocument(): CartEntry[] {
+  if (typeof document === 'undefined') return []
+  const match = document.cookie
+    .split('; ')
+    .find((row) => row.startsWith(`${CART_COOKIE_NAME}=`))
+  if (!match) return []
+  const raw = decodeURIComponent(match.slice(CART_COOKIE_NAME.length + 1))
+  return decodeCart(raw)
+}
+
+/**
+ * Persist `entries` to the cart cookie and notify listeners. Client-side only.
+ */
+export function writeCartCookieFromDocument(entries: CartEntry[]): void {
+  if (typeof document === 'undefined') return
+  document.cookie = `${CART_COOKIE_NAME}=${encodeURIComponent(encodeCart(entries))}; path=/; max-age=${CART_COOKIE_MAX_AGE}`
+  if (typeof window !== 'undefined') {
+    window.dispatchEvent(new Event('pandora:cart-updated'))
+  }
+}
+
+/**
+ * Read the cart cookie and hydrate it into `CartItem[]` by fetching the
+ * products catalogue. Client-side only.
+ */
+export async function getCartItems(): Promise<CartItem[]> {
+  const entries = readCartCookieFromDocument()
+  if (entries.length === 0) return []
+  const res = await fetch('/api/products')
+  if (!res.ok) return []
+  const products = (await res.json()) as Product[]
+  return hydrateCart(entries, products)
+}
+
+/**
+ * Persist `items` back to the cart cookie. Client-side only.
+ */
+export function setCartItems(items: CartItem[]): void {
+  const entries: CartEntry[] = items.map((i) => ({
+    productId: i.productId,
+    quantity: i.quantity,
+  }))
+  writeCartCookieFromDocument(entries)
 }

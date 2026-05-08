@@ -3,7 +3,12 @@
 import { useState, useEffect } from 'react'
 import { Link } from '@vercel/microfrontends/next/client'
 import Image from 'next/image'
-import { addToCart, type Product } from '@shop/api-client'
+import {
+  addToCartEntry,
+  readCartCookieFromDocument,
+  writeCartCookieFromDocument,
+  type Product,
+} from '@shop/api-client'
 
 interface Props {
   productId?: string
@@ -25,7 +30,8 @@ export default function PDPPage({ productId = 'p-1' }: Props) {
 
   const handleAddToCart = () => {
     if (!product) return
-    addToCart(product)
+    const entries = readCartCookieFromDocument()
+    writeCartCookieFromDocument(addToCartEntry(entries, product.id, 1))
     setAdded(true)
     setTimeout(() => setAdded(false), 2000)
   }
