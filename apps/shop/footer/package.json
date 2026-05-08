@@ -15,7 +15,7 @@
     "next": "16.2.4",
     "react": "^19.2.0",
     "react-dom": "^19.2.0",
-    "remote-components": "0.4.2"
+    "remote-components": "0.4.1"
   },
   "devDependencies": {
     "@shop/tsconfig": "workspace:*",
