@@ -22,13 +22,14 @@ export default function Layout({ children }: { children: React.ReactNode }) {
       <body className="min-h-screen flex flex-col antialiased">
         <PrefetchCrossZoneLinksProvider>
           <Providers>
-            <Suspense fallback={<HeaderSkeleton />}>
+            {/* DEBUG: header/footer commented out to bisect useContext error */}
+            {/* <Suspense fallback={<HeaderSkeleton />}>
               <ConsumeRemoteComponent isolate={false} src="/components/header" />
-            </Suspense>
+            </Suspense> */}
             <main className="flex-1">{children}</main>
-            <Suspense fallback={<FooterSkeleton />}>
+            {/* <Suspense fallback={<FooterSkeleton />}>
               <ConsumeRemoteComponent isolate={false} src="/components/footer" />
-            </Suspense>
+            </Suspense> */}
           </Providers>
         </PrefetchCrossZoneLinksProvider>
         <PrefetchCrossZoneLinks />
