@@ -14,6 +14,8 @@ const geist = Geist({ subsets: ['latin'] })
 
 export const metadata: Metadata = { title: 'PDP MFE — Shop' }
 
+export const dynamic = 'force-dynamic'
+
 export default function Layout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en" className={geist.className}>

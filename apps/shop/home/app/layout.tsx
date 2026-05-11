@@ -14,6 +14,11 @@ const geist = Geist({ subsets: ['latin'] })
 
 export const metadata: Metadata = { title: 'Home MFE — Shop' }
 
+// Layouts that mount `<ConsumeRemoteComponent>` must opt out of static
+// rendering so the remote bundle is fetched & composed at request time
+// (otherwise it'd be snapshot at build time and never refresh).
+export const dynamic = 'force-dynamic'
+
 export default function Layout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en" className={geist.className}>
