@@ -32,7 +32,7 @@ export default function Header() {
         }
       `}</style>
 
-      <div className="px-6 lg:px-10 h-[68px] flex items-center justify-between gap-4">
+      {/* <div className="px-6 lg:px-10 h-[68px] flex items-center justify-between gap-4">
         <Link
           href="/"
           className="flex-shrink-0 text-[22px] font-bold tracking-[0.18em] uppercase select-none"
@@ -93,7 +93,7 @@ export default function Header() {
             <SaleMegaMenu />
           </NavItem>
         </ul>
-      </nav>
+      </nav> */}
 
     </header>
   )
