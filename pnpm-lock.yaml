@@ -42,8 +42,8 @@ importers:
         specifier: ^19.2.3
         version: 19.2.6(react@19.2.6)
       remote-components:
-        specifier: 0.4.3
-        version: 0.4.3(next@16.2.4(@babel/core@7.29.0)(react-dom@19.2.6(react@19.2.6))(react@19.2.6))(react-dom@19.2.6(react@19.2.6))(react@19.2.6)
+        specifier: 0.4.4
+        version: 0.4.4(next@16.2.4(react-dom@19.2.6(react@19.2.6))(react@19.2.6))(react-dom@19.2.6(react@19.2.6))(react@19.2.6)
     devDependencies:
       '@types/react':
         specifier: ^19.2.3
@@ -76,8 +76,8 @@ importers:
         specifier: ^19.2.3
         version: 19.2.6(react@19.2.6)
       remote-components:
-        specifier: 0.4.3
-        version: 0.4.3(next@16.2.4(@babel/core@7.29.0)(react-dom@19.2.6(react@19.2.6))(react@19.2.6))(react-dom@19.2.6(react@19.2.6))(react@19.2.6)
+        specifier: 0.4.4
+        version: 0.4.4(next@16.2.4(react-dom@19.2.6(react@19.2.6))(react@19.2.6))(react-dom@19.2.6(react@19.2.6))(react@19.2.6)
     devDependencies:
       '@types/node':
         specifier: 20.11.30
@@ -113,8 +113,8 @@ importers:
         specifier: ^19.2.5
         version: 19.2.6(react@19.2.6)
       remote-components:
-        specifier: https://local-releases-qkad3lfqm-microfrontends-vtest314.vercel.app
-        version: https://local-releases-qkad3lfqm-microfrontends-vtest314.vercel.app(next@16.2.4(react-dom@19.2.6(react@19.2.6))(react@19.2.6))(react-dom@19.2.6(react@19.2.6))(react@19.2.6)
+        specifier: 0.4.4
+        version: 0.4.4(next@16.2.4(react-dom@19.2.6(react@19.2.6))(react@19.2.6))(react-dom@19.2.6(react@19.2.6))(react@19.2.6)
     devDependencies:
       '@shop/tsconfig':
         specifier: workspace:*
@@ -153,8 +153,8 @@ importers:
         specifier: ^19.2.5
         version: 19.2.6(react@19.2.6)
       remote-components:
-        specifier: https://local-releases-qkad3lfqm-microfrontends-vtest314.vercel.app
-        version: https://local-releases-qkad3lfqm-microfrontends-vtest314.vercel.app(next@16.2.4(react-dom@19.2.6(react@19.2.6))(react@19.2.6))(react-dom@19.2.6(react@19.2.6))(react@19.2.6)
+        specifier: 0.4.4
+        version: 0.4.4(next@16.2.4(react-dom@19.2.6(react@19.2.6))(react@19.2.6))(react-dom@19.2.6(react@19.2.6))(react@19.2.6)
     devDependencies:
       '@shop/tsconfig':
         specifier: workspace:*
@@ -190,8 +190,8 @@ importers:
         specifier: ^19.2.5
         version: 19.2.6(react@19.2.6)
       remote-components:
-        specifier: https://local-releases-qkad3lfqm-microfrontends-vtest314.vercel.app
-        version: https://local-releases-qkad3lfqm-microfrontends-vtest314.vercel.app(next@16.2.4(react-dom@19.2.6(react@19.2.6))(react@19.2.6))(react-dom@19.2.6(react@19.2.6))(react@19.2.6)
+        specifier: 0.4.4
+        version: 0.4.4(next@16.2.4(react-dom@19.2.6(react@19.2.6))(react@19.2.6))(react-dom@19.2.6(react@19.2.6))(react@19.2.6)
     devDependencies:
       '@shop/tsconfig':
         specifier: workspace:*
@@ -230,8 +230,8 @@ importers:
         specifier: ^19.2.5
         version: 19.2.6(react@19.2.6)
       remote-components:
-        specifier: https://local-releases-qkad3lfqm-microfrontends-vtest314.vercel.app
-        version: https://local-releases-qkad3lfqm-microfrontends-vtest314.vercel.app(next@16.2.4(react-dom@19.2.6(react@19.2.6))(react@19.2.6))(react-dom@19.2.6(react@19.2.6))(react@19.2.6)
+        specifier: 0.4.4
+        version: 0.4.4(next@16.2.4(react-dom@19.2.6(react@19.2.6))(react@19.2.6))(react-dom@19.2.6(react@19.2.6))(react@19.2.6)
     devDependencies:
       '@shop/tsconfig':
         specifier: workspace:*
@@ -270,8 +270,8 @@ importers:
         specifier: ^19.2.5
         version: 19.2.6(react@19.2.6)
       remote-components:
-        specifier: https://local-releases-qkad3lfqm-microfrontends-vtest314.vercel.app
-        version: https://local-releases-qkad3lfqm-microfrontends-vtest314.vercel.app(next@16.2.4(react-dom@19.2.6(react@19.2.6))(react@19.2.6))(react-dom@19.2.6(react@19.2.6))(react@19.2.6)
+        specifier: 0.4.4
+        version: 0.4.4(next@16.2.4(react-dom@19.2.6(react@19.2.6))(react@19.2.6))(react-dom@19.2.6(react@19.2.6))(react@19.2.6)
     devDependencies:
       '@shop/tsconfig':
         specifier: workspace:*
@@ -340,8 +340,8 @@ importers:
         specifier: ^19.2.5
         version: 19.2.6(react@19.2.6)
       remote-components:
-        specifier: https://local-releases-qkad3lfqm-microfrontends-vtest314.vercel.app
-        version: https://local-releases-qkad3lfqm-microfrontends-vtest314.vercel.app(next@16.2.4(react-dom@19.2.6(react@19.2.6))(react@19.2.6))(react-dom@19.2.6(react@19.2.6))(react@19.2.6)
+        specifier: 0.4.4
+        version: 0.4.4(next@16.2.4(react-dom@19.2.6(react@19.2.6))(react@19.2.6))(react-dom@19.2.6(react@19.2.6))(react@19.2.6)
     devDependencies:
       '@shop/tsconfig':
         specifier: workspace:*
@@ -380,8 +380,8 @@ importers:
         specifier: ^19.2.5
         version: 19.2.6(react@19.2.6)
       remote-components:
-        specifier: https://local-releases-qkad3lfqm-microfrontends-vtest314.vercel.app
-        version: https://local-releases-qkad3lfqm-microfrontends-vtest314.vercel.app(next@16.2.4(react-dom@19.2.6(react@19.2.6))(react@19.2.6))(react-dom@19.2.6(react@19.2.6))(react@19.2.6)
+        specifier: 0.4.4
+        version: 0.4.4(next@16.2.4(react-dom@19.2.6(react@19.2.6))(react@19.2.6))(react-dom@19.2.6(react@19.2.6))(react@19.2.6)
     devDependencies:
       '@shop/tsconfig':
         specifier: workspace:*
@@ -420,8 +420,8 @@ importers:
         specifier: ^19.2.5
         version: 19.2.6(react@19.2.6)
       remote-components:
-        specifier: https://local-releases-qkad3lfqm-microfrontends-vtest314.vercel.app
-        version: https://local-releases-qkad3lfqm-microfrontends-vtest314.vercel.app(next@16.2.4(react-dom@19.2.6(react@19.2.6))(react@19.2.6))(react-dom@19.2.6(react@19.2.6))(react@19.2.6)
+        specifier: 0.4.4
+        version: 0.4.4(next@16.2.4(react-dom@19.2.6(react@19.2.6))(react@19.2.6))(react-dom@19.2.6(react@19.2.6))(react@19.2.6)
     devDependencies:
       '@shop/tsconfig':
         specifier: workspace:*
@@ -1810,23 +1810,8 @@ packages:
     resolution: {integrity: sha512-sfWGGfavi0xr8Pg0sVsyHMAOziVYKgPLNrS7ig+ivMNb3wbCBw3KxtflsGBAwD3gYQlE/AEZsTLgToRrSCjb0Q==}
     engines: {node: '>=0.10.0'}
 
-  remote-components@0.4.3:
-    resolution: {integrity: sha512-p98FqLoDx4/oBlNe3sSMfL1WQfC9COqlxUcIfqjIx7WE+JV4Nt9YFYV0O0ztPeM5UY1pe4oFTtt0WPoDQAyQZg==}
-    peerDependencies:
-      next: '>=15'
-      react: ^19.2.3
-      react-dom: ^19.2.3
-    peerDependenciesMeta:
-      next:
-        optional: true
-      react:
-        optional: true
-      react-dom:
-        optional: true
-
-  remote-components@https://local-releases-qkad3lfqm-microfrontends-vtest314.vercel.app:
-    resolution: {tarball: https://local-releases-qkad3lfqm-microfrontends-vtest314.vercel.app}
-    version: 0.4.3
+  remote-components@0.4.4:
+    resolution: {integrity: sha512-Y7gFqKb7pHe1IINQf3NKoIenIXQNXM+S7eYAcYQGXYLSsUGQZjcUHtJPf15RKMjk51/58GyGocBALKwQj2G4iQ==}
     peerDependencies:
       next: '>=15'
       react: ^19.2.3
@@ -3243,30 +3228,7 @@ snapshots:
 
   react@19.2.6: {}
 
-  remote-components@0.4.3(next@16.2.4(@babel/core@7.29.0)(react-dom@19.2.6(react@19.2.6))(react@19.2.6))(react-dom@19.2.6(react@19.2.6))(react@19.2.6):
-    dependencies:
-      enhanced-resolve: 5.21.0
-      find-up: 7.0.0
-      parse5: 7.3.0
-      picocolors: 1.1.1
-      react-property: 2.0.2
-      react-server-dom-turbopack: 19.2.6(react-dom@19.2.6(react@19.2.6))(react@19.2.6)
-      react-server-dom-webpack: 19.2.6(react-dom@19.2.6(react@19.2.6))(react@19.2.6)(webpack@5.106.2)
-      style-to-js: 1.1.21
-      tsconfig-paths-webpack-plugin: 4.2.0
-      web-streams-polyfill: 4.2.0
-      webpack: 5.106.2
-    optionalDependencies:
-      next: 16.2.4(@babel/core@7.29.0)(react-dom@19.2.6(react@19.2.6))(react@19.2.6)
-      react: 19.2.6
-      react-dom: 19.2.6(react@19.2.6)
-    transitivePeerDependencies:
-      - '@swc/core'
-      - esbuild
-      - uglify-js
-      - webpack-cli
-
-  remote-components@https://local-releases-qkad3lfqm-microfrontends-vtest314.vercel.app(next@16.2.4(react-dom@19.2.6(react@19.2.6))(react@19.2.6))(react-dom@19.2.6(react@19.2.6))(react@19.2.6):
+  remote-components@0.4.4(next@16.2.4(react-dom@19.2.6(react@19.2.6))(react@19.2.6))(react-dom@19.2.6(react@19.2.6))(react@19.2.6):
     dependencies:
       enhanced-resolve: 5.21.0
       find-up: 7.0.0
