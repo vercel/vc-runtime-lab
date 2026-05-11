@@ -41,11 +41,11 @@ export default function Header() {
           SHOP
         </Link>
 
-        {/* <div className="flex-1 max-w-[360px]">
+        <div className="flex-1 max-w-[360px]">
           <SearchBar />
-        </div> */}
+        </div>
 
-        {/* <div className="flex items-center gap-5 text-black">
+        <div className="flex items-center gap-5 text-black">
           <button className="flex flex-col items-center gap-0.5 group" aria-label="Wishlist">
             <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
               <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z" />
@@ -78,10 +78,10 @@ export default function Header() {
             </svg>
             <CartBadge />
           </Link>
-        </div> */}
+        </div>
       </div>
 
-      {/* <nav className="relative border-t border-neutral-100" aria-label="Main navigation">
+      <nav className="relative border-t border-neutral-100" aria-label="Main navigation">
         <ul className="flex items-center px-6 lg:px-10 overflow-x-auto scrollbar-none">
           <NavItem href="/beds" label="Beds">
             <MegaMenu />
@@ -93,7 +93,7 @@ export default function Header() {
             <SaleMegaMenu />
           </NavItem>
         </ul>
-      </nav> */}
+      </nav>
 
     </header>
   )
