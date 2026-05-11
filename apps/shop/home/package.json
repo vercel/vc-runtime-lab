@@ -16,7 +16,7 @@
     "next": "16.2.4",
     "react": "^19.2.5",
     "react-dom": "^19.2.5",
-    "remote-components": "https://local-releases-6aiz61sfv-microfrontends-vtest314.vercel.app"
+    "remote-components": "https://local-releases-ayfh6dryo-microfrontends-vtest314.vercel.app"
   },
   "devDependencies": {
     "@shop/tsconfig": "workspace:*",
