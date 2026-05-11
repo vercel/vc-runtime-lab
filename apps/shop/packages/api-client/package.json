@@ -1,0 +1,13 @@
+{
+  "name": "@shop/api-client",
+  "version": "0.0.1",
+  "private": true,
+  "main": "./src/index.ts",
+  "exports": {
+    ".": "./src/index.ts"
+  },
+  "devDependencies": {
+    "@shop/tsconfig": "workspace:*",
+    "typescript": "^5.9.3"
+  }
+}

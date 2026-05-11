@@ -1,24 +1,71 @@
 # vc-runtime-lab
 
-A small demo using [`remote-components`](https://www.npmjs.com/package/remote-components) with [Vercel Microfrontends](https://vercel.com/docs/microfrontends). Open the deployed host at https://vc-runtime-lab-host.vercel.app/. It has one React/Vite host and one Remote Component remote:
+Two demos exploring runtime composition with [Vercel Microfrontends](https://vercel.com/docs/microfrontends) and [`remote-components`](https://www.npmjs.com/package/remote-components).
 
-- `host`: Vite React host and default microfrontend app
-- `remote`: Remote Component remote
+## Demos
 
-The host covers remote navigation, shared React context, and open and closed Shadow DOM.
+### `lab` — Vite host + 1 Next remote
+Vite React host (`apps/react-host/host`) and a Next.js Remote Components remote (`apps/react-host/remote`). Covers remote navigation, shared React context, and open vs closed Shadow DOM. Local proxy: **3024**. Deployed at https://vc-runtime-lab-host.vercel.app/.
 
-## Local Development
+### `shop` — Multi-app microfrontend storefront
+A bedroom-furniture storefront built with Next.js 16 native microfrontends + `remote-components`. Product imagery is rendered as CSS gradients (no external image hosts). Demonstrates two composition patterns side-by-side:
+- **Vertical MFEs** — each owns a route, routed at the edge via `microfrontends.json`.
+- **Horizontal MFEs** — expose components via `ExposeRemoteComponent`, consumed by any host via `ConsumeRemoteComponent`.
 
-Install dependencies:
+Local proxy: **3025**.
+
+| App        | Port | Pattern    | Route(s)                            |
+|------------|------|------------|-------------------------------------|
+| `shell`    | 3000 | Default    | `/api/*`, fallback                  |
+| `header`   | 3001 | Horizontal | `/components/header`                |
+| `footer`   | 3002 | Horizontal | `/components/footer`                |
+| `home`     | 3003 | Vertical   | `/`                                 |
+| `beds`     | 3004 | Vertical   | `/beds`, `/mattresses`              |
+| `pdp`      | 3005 | Vertical   | `/product/:id`                      |
+| `checkout` | 3006 | Vertical   | `/checkout`                         |
+| `sale`     | 3008 | Vertical   | `/sale`, `/sale/:category`          |
+
+## Running locally
 
 ```bash
 pnpm install
 ```
 
-Run the app servers:
+Run one demo at a time:
 
 ```bash
-pnpm dev
+pnpm dev:shop   # 8-app storefront, proxy at http://localhost:3025
+pnpm dev:lab    # Vite host + remote, proxy at http://localhost:3024
 ```
 
-Turborepo starts the Vercel Microfrontends local proxy automatically. Open the proxy URL printed by Turbo.
+`pnpm dev` defaults to `dev:shop`.
+
+## Workspace layout
+
+```
+vc-runtime-lab/
+├── apps/
+│   ├── react-host/
+│   │   ├── host/      # lab demo — Vite host
+│   │   └── remote/    # lab demo — Next remote
+│   └── shop/
+│       ├── shell/     # shop demo — default app, /api/*, microfrontends.json
+│       ├── header/    # shop demo — horizontal remote
+│       ├── footer/    # shop demo — horizontal remote
+│       ├── home/      # shop demo — owns /
+│       ├── beds/      # shop demo — owns /beds, /mattresses
+│       ├── pdp/       # shop demo — owns /product/:id
+│       ├── checkout/  # shop demo — owns /checkout
+│       ├── sale/      # shop demo — owns /sale
+│       └── packages/
+│           ├── ui/            # Button, Input, Typography + Tailwind base
+│           ├── api-client/    # shared fetch helpers + types
+│           └── tsconfig/      # shared TS configs
+```
+
+## Type-check
+
+```bash
+pnpm typecheck:lab
+pnpm typecheck:shop
+```
