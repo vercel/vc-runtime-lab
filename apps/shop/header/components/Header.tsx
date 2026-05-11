@@ -32,7 +32,7 @@ export default function Header() {
         }
       `}</style>
 
-      {/* <div className="px-6 lg:px-10 h-[68px] flex items-center justify-between gap-4">
+      <div className="px-6 lg:px-10 h-[68px] flex items-center justify-between gap-4">
         <Link
           href="/"
           className="flex-shrink-0 text-[22px] font-bold tracking-[0.18em] uppercase select-none"
@@ -81,7 +81,7 @@ export default function Header() {
         </div>
       </div>
 
-      <nav className="relative border-t border-neutral-100" aria-label="Main navigation">
+      {/* <nav className="relative border-t border-neutral-100" aria-label="Main navigation">
         <ul className="flex items-center px-6 lg:px-10 overflow-x-auto scrollbar-none">
           <NavItem href="/beds" label="Beds">
             <MegaMenu />
