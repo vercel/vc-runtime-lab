@@ -8,7 +8,7 @@ import CartBadge from './CartBadge'
 
 export default function Header() {
   return (
-    <header className="relative w-full bg-white border-b border-neutral-200 sticky top-0 z-50">
+    <header className="relative w-full bg-lime-400 border-b border-neutral-200 sticky top-0 z-50">
       <style>{`
         .shop-nav-group .shop-mega-menu { display: none; }
         .shop-nav-group:hover .shop-mega-menu,
