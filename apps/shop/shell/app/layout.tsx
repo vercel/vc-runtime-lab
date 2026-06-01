@@ -8,7 +8,7 @@ import {
 } from '@vercel/microfrontends/next/client'
 import './globals.css'
 import { Providers } from './providers'
-import { HeaderSkeleton, FooterSkeleton } from '@/components/Skeletons'
+import { FooterSkeleton } from '@/components/Skeletons'
 
 const geist = Geist({ subsets: ['latin'] })
 
@@ -17,17 +17,13 @@ export const metadata: Metadata = {
   description: 'Beds, mattresses and bedroom essentials, made to last.',
 }
 
-export const dynamic = 'force-dynamic'
-
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en" className={geist.className}>
       <body className="min-h-screen flex flex-col antialiased">
         <PrefetchCrossZoneLinksProvider>
           <Providers>
-            <Suspense fallback={<HeaderSkeleton />}>
-              <ConsumeRemoteComponent isolate={false} src="/components/header" />
-            </Suspense>
+            <ConsumeRemoteComponent isolate={false} src="/components/header" />
             <main className="flex-1">{children}</main>
             <Suspense fallback={<FooterSkeleton />}>
               <ConsumeRemoteComponent isolate={false} src="/components/footer" />
