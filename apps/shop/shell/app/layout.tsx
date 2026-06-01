@@ -1,6 +1,5 @@
 import type { Metadata } from 'next'
 import { Geist } from 'next/font/google'
-import { Suspense } from 'react'
 import { ConsumeRemoteComponent } from 'remote-components/host/nextjs/app'
 import {
   PrefetchCrossZoneLinks,
@@ -8,7 +7,6 @@ import {
 } from '@vercel/microfrontends/next/client'
 import './globals.css'
 import { Providers } from './providers'
-import { HeaderSkeleton, FooterSkeleton } from '@/components/Skeletons'
 
 const geist = Geist({ subsets: ['latin'] })
 
@@ -17,7 +15,7 @@ export const metadata: Metadata = {
   description: 'Beds, mattresses and bedroom essentials, made to last.',
 }
 
-export const dynamic = 'force-dynamic'
+export const revalidate = false
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
@@ -25,13 +23,9 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       <body className="min-h-screen flex flex-col antialiased">
         <PrefetchCrossZoneLinksProvider>
           <Providers>
-            <Suspense fallback={<HeaderSkeleton />}>
-              <ConsumeRemoteComponent isolate={false} src="/components/header" />
-            </Suspense>
+            <ConsumeRemoteComponent isolate={false} src="/components/header" />
             <main className="flex-1">{children}</main>
-            <Suspense fallback={<FooterSkeleton />}>
-              <ConsumeRemoteComponent isolate={false} src="/components/footer" />
-            </Suspense>
+            <ConsumeRemoteComponent isolate={false} src="/components/footer" />
           </Providers>
         </PrefetchCrossZoneLinksProvider>
         <PrefetchCrossZoneLinks />
