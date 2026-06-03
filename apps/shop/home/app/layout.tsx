@@ -8,6 +8,7 @@ import {
 } from '@vercel/microfrontends/next/client'
 import './globals.css'
 import { Providers } from './providers'
+import { Header } from '@/components/Header'
 import { FooterSkeleton } from '@/components/Skeletons'
 
 const geist = Geist({ subsets: ['latin'] })
@@ -20,7 +21,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
       <body className="min-h-screen flex flex-col antialiased">
         <PrefetchCrossZoneLinksProvider>
           <Providers>
-            <ConsumeRemoteComponent isolate={false} src="/components/header" />
+            <Header />
             <main className="flex-1">{children}</main>
             <Suspense fallback={<FooterSkeleton />}>
               <ConsumeRemoteComponent isolate={false} src="/components/footer" />

@@ -3,6 +3,7 @@ import { withMicrofrontends } from '@vercel/microfrontends/next/config'
 import { withRemoteComponentsConfig } from 'remote-components/config/nextjs'
 
 const nextConfig: NextConfig = {
+  cacheComponents: true,
   images: {
     remotePatterns: [
       { protocol: 'https', hostname: 'images.unsplash.com' },
